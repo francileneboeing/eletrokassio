@@ -1993,7 +1993,7 @@ ul.panel-controls > li > .dropdown-menu:before {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  background-color: #2267cc;
+  background-color: #ffffff;
   /* border-color: #DDD; */
 }
 .btn-danger {
@@ -7392,4 +7392,9 @@ span.red {
 }
 .btn-primary {
   background-color: #2267cc;
+}
+
+input.check{
+  margin-top: 10px;
+  float: left;
 }

@@ -1,5 +1,8 @@
 <?php 
-    define('ADMIN', 'http://localhost/eletrokassio/admin');
+    define(ADMIN, 'http://localhost/eletrokassio/admin');
+    define(CADASTRAR, 'http://localhost/eletrokassio/admin/cadastrar');
+    define(EDITAR, 'http://localhost/eletrokassio/admin/editar');
+    define(LISTAR, 'http://localhost/eletrokassio/admin/listar');
 ?>
 
 <!DOCTYPE html>

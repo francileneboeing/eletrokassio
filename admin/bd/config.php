@@ -6,7 +6,7 @@ error_reporting (0);
 // $db = mysql_select_db ("feagro_site", $bd);
 
 $bd = mysql_connect ("localhost", "root", "");
-$db = mysql_select_db ("feagro", $bd);
+$db = mysql_select_db ("eletrokassio", $bd);
 
 //$bd = mysql_connect ("localhost", "bgstu216_2", "aberta123");
 //$db = mysql_select_db ("bgstu216_feagro");

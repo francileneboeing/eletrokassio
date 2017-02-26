@@ -29,7 +29,7 @@
                 </div>
                 <div class="login-footer">
                     <div class="pull-left">
-                        &copy; 2016 BG Studio
+                        &copy; 2017 BG Studio
                     </div>
 
                 </div>

@@ -1,5 +1,6 @@
 <?php include('../restrito.php'); ?>
 <?php include('../header.php'); ?>
+<?php include('config.php'); ?>
 
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
@@ -24,7 +25,11 @@
 
 <!-- ##################### START INSERTS ##################### -->
 <?php
+
 switch ($_POST['acao']) {
+	case "cadastraCategoriaProduto":
+	    insertOrUpdateCategoriaProduto();
+		break;
 	case "cadastraBanner":
 		cadastraBanner();
 		break;
@@ -36,6 +41,31 @@ switch ($_POST['acao']) {
 		break;
 
 }
+
+function insertOrUpdateCategoriaProduto(){
+    include ('config.php');    
+	$codigo          = addslashes($_POST['codigo']);
+	$descricao       = addslashes($_POST['descricao']);
+	$categoriaPai    = addslashes($_POST['categoriaPai']);
+	$ativo           = addslashes($_POST['ativo']);		
+	if ($ativo != 1){
+		$ativo = 2;
+	}
+	if ($categoriaPai == ''){
+		$categoriaPai = null;
+	}
+	echo "<br>Código".$codigo.". <br>Descrição: ".$descricao.". <br>Categoria Pai:  ".$categoriaPai.". <br>Ativo: ".$ativo.". <br>SQL: ".$sql;
+	//$sql = mysql_query("INSERT INTO produto_categoria (id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, '$ativo')", $bd) or die(MYSQL_ERROR());
+	if ($codigo == 0){
+		$sql = mysql_query("INSERT INTO produto_categoria(id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, $ativo);") or die(MYSQL_ERROR());
+	}else{
+		$sql = mysql_query("UPDATE produto_categoria SET descricao = '$descricao', id_pai = $categoriaPai, icativo = $ativo WHERE id = $codigo", $bd) or die(MYSQL_ERROR());
+	}
+	mysql_close($bd);
+	//echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=sucess';</script>";
+	//echo "Código".$codigo.". Descrição: ".$descricao.". Categoria Pai:  ".$categoriaPai.". Ativo: ".$ativo.". SQL: ".$sql;
+}
+
 function cadastraBanner() {
 	
 	include ('config.php');
