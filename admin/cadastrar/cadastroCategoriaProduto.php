@@ -21,7 +21,10 @@
 		<!-- START BREADCRUMB -->
 		<ul class="breadcrumb">
 			<li>Inicio</li>
+			<li>Cadastros</li>
 			<li>Produto</li>
+			<li>Categoria</li>
+			<li>Adicionar</li>
 			<li class="active">Cadastro de Categoria</li>
 		</ul>
 		<!-- END BREADCRUMB -->
@@ -97,8 +100,8 @@
 								<div class="form-group">
 									<label class="col-md-3 col-xs-12 control-label">Ativo<span class="red"> *</span></label>
 									<div class="col-md-6 col-xs-12">
-										<div class="input-group">														
-											<input name="ativo" class="check" type="checkbox" value="1">
+										<div class="input-group">																									
+											<input type="checkbox" class="icheckbox aninhado" value="1" checked="checked"/>
 										</div>
 										<span class="help-block">Deixar marcado caso categoria ativa</span>
 									</div>

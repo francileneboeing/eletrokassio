@@ -28,8 +28,8 @@
                                 <li class="l-cadastro-produto-categoria xn-openable">
                                     <a href="#"><span class="fa fa-image"></span> Categoria</a>
                                     <ul>
-                                       <li><a href="<?php echo CADASTRAR; ?>/cadastroCategoriaProduto.php"><span class="fa fa-plus"></span>Adicionar</a></li>
-                                       <li><a href="<?php echo LISTAR; ?>/listaBanner.php"><span class="fa fa-list-ul"></span> Listar</a></li>
+                                       <li><a href="<?php echo CADASTRAR; ?>/cadastroCategoriaProduto.php"><span class="fa fa-plus"></span> Adicionar</a></li>
+                                       <li><a href="<?php echo LISTAR; ?>/listaCategoriaSubcategoria.php"><span class="fa fa-list-ul"></span> Listar</a></li>
                                     </ul>
                                 </li>
                             </li>                                                        

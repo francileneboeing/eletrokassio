@@ -54,7 +54,7 @@ function insertOrUpdateCategoriaProduto(){
 	if ($categoriaPai == ''){
 		$categoriaPai = null;
 	}
-	echo "<br>Código".$codigo.". <br>Descrição: ".$descricao.". <br>Categoria Pai:  ".$categoriaPai.". <br>Ativo: ".$ativo.". <br>SQL: ".$sql;
+	//echo "<br>Código".$codigo.". <br>Descrição: ".$descricao.". <br>Categoria Pai:  ".$categoriaPai.". <br>Ativo: ".$ativo.". <br>SQL: ".$sql;
 	//$sql = mysql_query("INSERT INTO produto_categoria (id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, '$ativo')", $bd) or die(MYSQL_ERROR());
 	if ($codigo == 0){
 		$sql = mysql_query("INSERT INTO produto_categoria(id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, $ativo);") or die(MYSQL_ERROR());
@@ -62,7 +62,7 @@ function insertOrUpdateCategoriaProduto(){
 		$sql = mysql_query("UPDATE produto_categoria SET descricao = '$descricao', id_pai = $categoriaPai, icativo = $ativo WHERE id = $codigo", $bd) or die(MYSQL_ERROR());
 	}
 	mysql_close($bd);
-	//echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=sucess';</script>";
+	echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=sucess';</script>";
 	//echo "Código".$codigo.". Descrição: ".$descricao.". Categoria Pai:  ".$categoriaPai.". Ativo: ".$ativo.". SQL: ".$sql;
 }
 
