@@ -5,7 +5,7 @@
 
 <!doctype html>
 <!--	
-    	Cliente: Feagro
+    	Cliente: Eletro Kassio
 		Desenvolvido por: BG Studio - Marketing é Arte
 		Site: www.bgstudio.com.br
 		Facebook: facebook.com.br/BGStudio3D	
@@ -25,15 +25,10 @@
 
 <link rel="shortcut icon" href="<?php setHome(); ?>/paginas/images/favicon.png" type="image/x-icon"/>
 
+
 </head>
 
-<!-- PRELOAD -->
-<!-- <div id="overlay">
-<div class="spinner"></div> 
-</div> -->
-<!-- x preload x -->
-
-<body id="page">
+<body>
 
 <!-- HOME -->
 <?php getHome(); ?>

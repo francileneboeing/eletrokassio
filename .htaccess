@@ -1,11 +1,12 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f [OR]
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
 
-RewriteRule ^postagem\/(.*)\/(.*)$ index.php?pagina=postagem&id=$1&titulo=$2
-RewriteRule ^postagem\/(.*)$ index.php?pagina=postagem&id=$1
+#RewriteRule ^postagem\/(.*)\/(.*)$ index.php?pagina=postagem&id=$1&titulo=$2
+#RewriteRule ^postagem\/(.*)$ index.php?pagina=postagem&id=$1
 
 RewriteRule ^(.*)$ index.php?pagina=$1 [QSA]
+
 
 #Força a utilizar Cache-Control e Expires header
 <IfModule mod_headers.c>
@@ -56,6 +57,7 @@ FileETag None
     Header unset X-UA-Compatible
   </FilesMatch>
 </IfModule>
-<Files ~ "^\.(htaccess|htpasswd)$">
-	  deny from all
-	</Files>
+
+#<Files ~ "^\.(htaccess|htpasswd)$">
+#  deny from all
+#</Files>

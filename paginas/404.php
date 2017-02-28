@@ -5,9 +5,6 @@
 
 <title><?php setTitulo(); ?></title>
 
-<!-- MENU -->
-<?php setTopo(); ?>
-
 
 <!-- CONTEÚDO -->
 
