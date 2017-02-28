@@ -8,7 +8,7 @@
     <!-- SIGN OUT -->
 
     <li class="xn-icon-button pull-right">
-        <a href="logout.php"><span class="fa fa-sign-out"></span></a>                        
+        <a href="<?php echo ADMIN ?>/logout.php"><span class="fa fa-sign-out"></span></a>                        
     </li> 
     <li class="xn-icon-button pull-right">
         <a href="<?php echo $url; ?>/.." target="_black"><span class="fa fa-home"></span></a>
