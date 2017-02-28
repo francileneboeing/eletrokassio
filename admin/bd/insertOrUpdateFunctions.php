@@ -39,7 +39,17 @@ switch ($_POST['acao']) {
 	case "cadastraHospedagem":
 		cadastraHospedagem();
 		break;
+    case "alteraStatusCategoriaProduto":
+    	alteraStatusCategoriaProduto();
+    	break;
+}
 
+if ($_GET['acao']){
+	switch ($_GET['acao']) {
+    	case "alteraStatusCategoriaProduto":
+    		alteraStatusCategoriaProduto();
+    		break;
+    }
 }
 
 function insertOrUpdateCategoriaProduto(){
@@ -47,23 +57,46 @@ function insertOrUpdateCategoriaProduto(){
 	$codigo          = addslashes($_POST['codigo']);
 	$descricao       = addslashes($_POST['descricao']);
 	$categoriaPai    = addslashes($_POST['categoriaPai']);
-	$ativo           = addslashes($_POST['ativo']);		
+	$ativo           = addslashes($_POST['ativo']);			
 	if ($ativo != 1){
 		$ativo = 2;
 	}
 	if ($categoriaPai == ''){
 		$categoriaPai = null;
-	}
-	//echo "<br>Código".$codigo.". <br>Descrição: ".$descricao.". <br>Categoria Pai:  ".$categoriaPai.". <br>Ativo: ".$ativo.". <br>SQL: ".$sql;
-	//$sql = mysql_query("INSERT INTO produto_categoria (id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, '$ativo')", $bd) or die(MYSQL_ERROR());
-	if ($codigo == 0){
-		$sql = mysql_query("INSERT INTO produto_categoria(id, descricao, id_pai, icativo) VALUES (null, '$descricao', $categoriaPai, $ativo);") or die(MYSQL_ERROR());
+	}	
+	if ($codigo > 0){
+		$sql = "SELECT true FROM produto_categoria WHERE id = $codigo";
+		$result = $conn->query($sql);
+		if ($result->num_rows >0){
+			$sql = "UPDATE produto_categoria SET descricao = '$descricao', id_pai = $categoriaPai, icativo = $ativo WHERE id = $codigo";
+		}else{
+			$sql = "INSERT INTO produto_categoria(id, descricao, id_pai, icativo) VALUES ($codigo, '$descricao', $categoriaPai, $ativo);";		
+		}
+		//echo "<br>Código".$codigo.". <br>Descrição: ".$descricao.". <br>Categoria Pai:  ".$categoriaPai.". <br>Ativo: ".$ativo.". <br>SQL: ".$sql;	
+		if ($conn->query($sql) === TRUE) {
+			$conn->close();
+    		echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=sucess';</script>";
+		} else {
+			$conn->close();
+			echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=error';</script>";    		
+		}		
+	}	
+	
+}
+
+function alteraStatusCategoriaProduto(){
+	include ('config.php');    
+	$id          = $_GET['id'];
+	$status      = $_GET['status'];
+	$sql         = "UPDATE produto_categoria SET icativo = $status WHERE id = $id";
+	echo "SQL: ".$sql;
+	if ($conn->query($sql) === TRUE){
+		$conn->close();
+		echo "<script>window.location='".LISTAR."/listaCategoriaSubCategoria.php?return=sucess&description=status';</script>";
 	}else{
-		$sql = mysql_query("UPDATE produto_categoria SET descricao = '$descricao', id_pai = $categoriaPai, icativo = $ativo WHERE id = $codigo", $bd) or die(MYSQL_ERROR());
-	}
-	mysql_close($bd);
-	echo "<script>window.location='".CADASTRAR."/cadastroCategoriaProduto.php?return=sucess';</script>";
-	//echo "Código".$codigo.". Descrição: ".$descricao.". Categoria Pai:  ".$categoriaPai.". Ativo: ".$ativo.". SQL: ".$sql;
+		$conn->close();
+		echo "<script>window.location='".LISTAR."/listaCategoriaSubCategoria.php?return=error&description=status';</script>";
+	}	
 }
 
 function cadastraBanner() {

@@ -106,15 +106,15 @@
                    <div class="message-box animated fadeIn" id="message-box">
                        <div class="mb-container">
                            <div class="mb-middle">
-                               <div class="mb-title"><span class="fa fa-trash-o"></span> Deletar banner? <?php echo $variavelphp; ?></div>
+                               <div class="mb-title"><span class="fa fa-trash-o"></span> Deletar banner? Essa ação não poderá ser desfeita. <?php echo $variavelphp; ?></div>
                                <div class="mb-content">
                                    <p id="p-message-box">
                                    
                                    </p>
                                </div>
-                               <div class="mb-footer">
-                                   <button onclick="Deletar();" class="btn btn-success btn-lg pull-right">SIM</button>
+                               <div class="mb-footer">                                   
                                    <button style="margin-right:10px;" class="btn btn-danger btn-lg pull-right mb-control-close">Não</button>
+                                   <button onclick="Deletar();" class="btn btn-success btn-lg pull-left">SIM</button>
                                </div>
                                <script type="text/javascript">
                                    var codigo;

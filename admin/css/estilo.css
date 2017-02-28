@@ -1672,22 +1672,32 @@ ul.panel-controls > li {
 ul.panel-controls > li > a {
   display: block;
   float: left;
-  width: 30px;
+  width: auto;
   height: 30px;
   text-align: center;
   line-height: 30px;
-  color: #e8ebf1;
-  /* border: 1px solid #e8ebf1; */
+  color: #327ef0;
   -moz-border-radius: 20%;
   -webkit-border-radius: 20%;
-  border-radius: 20%;
+  border-radius: 5px;
   margin-left: 3px;
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
   -ms-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
+  background-color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+ul.panel-controls > li > a.panel-refresh {
   background-color: #2267cc;
+  color: #fff;
+}
+ul.panel-controls > li > a span.fa-plus {
+  margin-right: 10px
 }
 ul.panel-controls > li > a.control-primary {
   color: #f8f8f8;
@@ -1710,9 +1720,16 @@ ul.panel-controls > li > a.control-danger {
   border-color: #E04B4A;
 }
 ul.panel-controls > li > a:hover {
+  border-color: #95b75d;
+  color: #ffffff;
+  background-color: #95b75d;
+  text-decoration: none;
+}
+ul.panel-controls > li > a.panel-refresh:hover {
   border-color: #999;
-  color: #327ef0;
+  color: #2267cc;
   background-color: #ffffff;
+  text-decoration: none;
 }
 ul.panel-controls > li > a.rounded {
   -moz-border-radius: 0px;
@@ -2022,7 +2039,7 @@ ul.panel-controls > li > .dropdown-menu:before {
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
-  background-color: #fe970a;
+  background-color: #fe770a;
   border-color: #fe970a;
 }
 .btn-warning[disabled],
@@ -2232,7 +2249,7 @@ input[type=checkbox] {
   box-shadow: none;
   -webkit-appearance: none;
   border: 1px solid #D5D5D5;
-  background: #F9F9F9;
+  background: #fff;
 }
 .form-control:focus {
   border-color: #C5C5C5;
@@ -7396,4 +7413,9 @@ span.red {
 
 input.aninhado{
   margin-top: 5px;
+}
+
+button.btn-adicionar{
+  color: #327ef0
+  margin-right: ;
 }

@@ -23,6 +23,9 @@
 
 <?php
 switch ($_GET['acao']) {
+	case "deletaCategoria":
+		deletaCategoria();
+		break;
 	case "deletaBanner":
 		deletaBanner();
 		break;
@@ -33,6 +36,25 @@ switch ($_GET['acao']) {
 		deletaHospedagem();
 		break;
 }
+
+function deletaCategoria(){
+	include ('config.php');
+	$id     = $_GET['id'];
+	$sql    = "SELECT * FROM produto_categoria WHERE id_pai = $id";	
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0){
+		echo "<script>window.location='".LISTAR."/listaCategoriaSubCategoria.php?return=error&description=fk';</script>";
+	}else{
+		$sql = "DELETE FROM produto_categoria WHERE id = $id";
+		if($conn->query($sql) === TRUE){
+			echo "<script>window.location='".LISTAR."/listaCategoriaSubCategoria.php?return=sucess';</script>";
+		}else{
+			echo "<script>window.location='".LISTAR."/listaCategoriaSubCategoria.php?return=error';</script>";
+		}	
+	}
+	
+}
+
 function deletaBanner() {
 	
 	include ('config.php');

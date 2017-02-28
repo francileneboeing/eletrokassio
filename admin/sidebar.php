@@ -3,7 +3,7 @@
     <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
-            <a href="started.php">BG Studio {admin}</a>
+            <a href="<?php echo ADMIN; ?>/started.php">BG Studio {admin}</a>
             <a href="#" class="x-navigation-control"></a>
         </li>
         <li class="xn-profile">
@@ -19,19 +19,13 @@
                 <li class="l-cadastro">
                     <li class="l-cadastro-produto xn-openable">
                         <a href="#"><span class="fa fa-image"></span> Produto</a>
-                        <ul>
-                            <li><a href="<?php echo CADASTRAR; ?>/cadastroProduto.php"><span class="fa fa-plus"></span> Adicionar</a></li>
-                            <li><a href="<?php echo LISTAR; ?>/listaProduto.php"><span class="fa fa-list-ul"></span> Listar</a></li>
+                        <ul> 
+                            <li class="l-cadastro-produto-produto">                                                          
+                            <li><a href="<?php echo LISTAR; ?>/listaProduto.php"><span class="fa fa-list-ul"></span> Produtos</a></li>
                         </ul>
                         <ul>
-                            <li class="l-cadastro-produto-categoria">
-                                <li class="l-cadastro-produto-categoria xn-openable">
-                                    <a href="#"><span class="fa fa-image"></span> Categoria</a>
-                                    <ul>
-                                       <li><a href="<?php echo CADASTRAR; ?>/cadastroCategoriaProduto.php"><span class="fa fa-plus"></span> Adicionar</a></li>
-                                       <li><a href="<?php echo LISTAR; ?>/listaCategoriaSubcategoria.php"><span class="fa fa-list-ul"></span> Listar</a></li>
-                                    </ul>
-                                </li>
+                            <li class="l-cadastro-produto-categoria">                               
+                            <li><a href="<?php echo LISTAR; ?>/listaCategoriaSubcategoria.php"><span class="fa fa-list-ul"></span> Categorias</a></li>                                                                        
                             </li>                                                        
                         </ul>
                     </li>
