@@ -5,7 +5,7 @@
 
 <!-- HOME -->
 <?php getHome(); ?>
-<h1>POSTAGEM <?php echo " <br> ".$_GET['id']." <br> ".$_GET['titulo']; ?></h1>
+<h1><?php echo " <br> PÁGINA: ".$_GET['pagina']." <br><br> ID: ".$_GET['info1']; ?></h1>
 
 <!-- RODAPÉ -->
 <?php setFooter(); ?>

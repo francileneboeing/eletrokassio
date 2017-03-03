@@ -1,7 +1,9 @@
 <?php
 
 	function getHome(){
+		
 		$pagina = $_GET['pagina'];
+
 		$pagina = explode('/', $pagina);
 		$pagina[0] = ($pagina[0] == NULL ? 'index' : $pagina[0]);
 
