@@ -1,5 +1,4 @@
-
-    <!-- START PRELOADS -->
+<!-- START PRELOADS -->
     <audio id="audio-alert" src="<?php echo ADMIN; ?>/audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="<?php echo ADMIN; ?>/audio/fail.mp3" preload="auto"></audio>
     <!-- END PRELOADS -->      
@@ -8,12 +7,6 @@
 
         <!-- Plugins Tabelas -->   
         <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/tableExport.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/jquery.base64.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/html2canvas.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/jspdf/libs/sprintf.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/jspdf/jspdf.js"></script>
-        <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/tableexport/jspdf/libs/base64.js"></script>   
         <!-- END Plugins Tabelas -->
         
         <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/morris/raphael-min.js"></script>

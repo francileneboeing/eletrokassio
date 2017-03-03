@@ -27,7 +27,7 @@
                             <li class="l-cadastro-produto-categoria">                               
                             <li><a href="<?php echo LISTAR; ?>/listaCategoriaSubcategoria.php"><span class="fa fa-list-ul"></span> Categorias</a></li>                                                                        
                             </li>                                                        
-                        </ul>
+                        </ul>                        
                     </li>
                 </li>
             </ul>

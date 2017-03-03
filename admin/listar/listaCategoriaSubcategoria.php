@@ -1,6 +1,8 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
-<div class="page-container">
+<?php include('../dao/categoriaProdutoDAO.php'); ?>
+
+<div class="page-container">	
 	<?php include('../sidebar.php'); ?>
 	<script>
 		$(document).ready(function(){
@@ -68,11 +70,9 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php
-										include('..bd/config.php');
-										include('../limitaTexto.php');
-										$sql =  "SELECT * FROM produto_categoria ORDER BY id";
-										$result = $conn->query($sql);
+									<?php										
+										include('../limitaTexto.php');										
+										$result = findAll();
 										if ($result->num_rows > 0){
 											while ($categoria = $result->fetch_assoc()) {
 												$id            	   = $categoria['id'];
@@ -82,12 +82,8 @@
 												$descricaoCategPai = null;
 												$descriaoStatus    = null;
 												if ($idPai > 0){
-													$sqlPai  = "SELECT * FROM produto_categoria WHERE id = $idPai";
-													$result2 = $conn->query($sqlPai);
-													if ($result2->num_rows >0){
-														$row = $result2->fetch_assoc();
-														$descricaoCategPai = $row['descricao'];
-																										}
+													$categoria  = findByID($idPai);																
+													$descricaoCategPai = $categoria['descricao'];												
 												}
 												if ($icAtivo == 1){
 													$descriaoStatus = "Ativo";
@@ -101,9 +97,9 @@
 												echo "<td>".limitarTexto($descricaoCategPai, $limite)."</td>";		
 												echo "<td class=\" \" id=\"left\">";								
 											    if($icAtivo == 1){
-													echo "<a href=\"".BD."/insertOrUpdateFunctions.php?acao=alteraStatusCategoriaProduto&id=".$id."&status=0\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #5ba;\"></p></a>";
+													echo "<a href=\"".DAO."/categoriaProdutoDAO.php?acao=alteraStatusCategoriaProduto&id=".$id."&status=0\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #5ba;\"></p></a>";
 												}else {
-													echo "<a href=\"".BD."/insertOrUpdateFunctions.php?acao=alteraStatusCategoriaProduto&id=".$id."&status=1\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #f00;\"></p></a>";
+													echo "<a href=\"".DAO."/categoriaProdutoDAO.php?acao=alteraStatusCategoriaProduto&id=".$id."&status=1\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #f00;\"></p></a>";
 												}
 												echo "</td>";																																
 												echo "<td style=\"text-align:right;\">
@@ -145,7 +141,7 @@
 						}
 						function Deletar(){						
 							var acao = "deletaCategoria";
-							window.location= "../bd/deletesFunctions.php?id="+codigo+"&acao="+acao;
+							window.location= "../dao/categoriaProdutoDAO.php?id="+codigo+"&acao="+acao;
 						}
 						</script>
 					</div>

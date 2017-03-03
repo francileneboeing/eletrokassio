@@ -3,6 +3,8 @@
     define('CADASTRAR', 'http://localhost/eletrokassio/admin/cadastrar');    
     define('LISTAR', 'http://localhost/eletrokassio/admin/listar');
     define('BD', 'http://localhost/eletrokassio/admin/bd');
+    define('DAO', 'http://localhost/eletrokassio/admin/dao');
+    define('CONNECTION', 'http://localhost/eletrokassio/admin/connection');
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@
 
 
 
-    <!-- PLUGINS  -->
+    <!-- PLUGINS  -->       
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/bootstrap/bootstrap.min.js"></script>        

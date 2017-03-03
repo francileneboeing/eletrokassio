@@ -1,5 +1,7 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
+
+<?php //include('../dao/categoriaProdutoDAO.php'); ?>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
 	
@@ -24,6 +26,7 @@
 			<li>Cadastros</li>
 			<li>Produto</li>
 			<li>Categoria</li>
+			<li>Categoria</li>
 			<li>Adicionar</li>
 			<li class="active">Cadastro de Categoria</li>
 		</ul>
@@ -34,30 +37,24 @@
           $icativo      = 1;
           $idPai        = null;
           $isChecked    = "checked";
-
-         include('..bd/config.php');
+         
 		 if (!empty($_GET['id'])){
 		 	$id = $_GET['id'];
-		 	if ($id > 0){		 		
-		 		$sql = "SELECT * FROM produto_categoria WHERE id = $id";
-		 		$result = $conn->query($sql);
-		 		if ($result->num_rows > 0){
-		 			$row = $result->fetch_assoc();		 			
+		 	if ($id > 0){
+		 		require_once('../dao/categoriaProdutoDAO.php');		 		
+		 		$row = findByID($id);
+		 		if ($row != null){
 		 			$descricao = $row['descricao'];
 		 			$icativo   = $row['icativo'];
 		 			$idPai     = $row['id_pai'];
 		 			if ($icativo != 1){		 				
 						$isChecked = "";						
-		 			}		 			
-		 		}		 		
+		 			}		 		
+		 		}		 				 				 		
 		 	}
-		 }else{
-		 	$sql = "SELECT coalesce(max(id),0)+1 maior FROM produto_categoria";
-		 	$result = $conn->query($sql);
-		 	if ($result->num_rows >0 ){
-		 		$row = $result->fetch_assoc();
-		 		$id = $row['maior'];
-		 	}
+		 }else{	 	
+		 	require_once('../dao/categoriaProdutoDAO.php');		 		
+		 	$id = findMaxID();
 		 }	
 		?>
 	    <!-- PAGE CONTENT WRAPPER -->
@@ -71,7 +68,7 @@
 					
 					</script>
 					<!-- COMEÇA FORMULÁRIO -->
-					<form class="form-horizontal" action="<?php echo ADMIN; ?>/bd/insertOrUpdateFunctions.php" method="post" enctype="multipart/form-data">
+					<form class="form-horizontal" action="<?php echo DAO; ?>/categoriaProdutoDAO.php" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="acao" value="cadastraCategoriaProduto">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -100,7 +97,7 @@
 									<div class="col-md-6 col-xs-12">
 										<div class="input-group">
 											<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-											<input name="codigo" type="text" class="form-control" required="required" readonly value="<?php echo $id?>">
+											<input name="codigo" type="text" class="form-control" required="required" readonly value="<?php echo $id.'. ah: '.$idPai?>">
 										</div>										
 									</div>
 								</div>
@@ -120,11 +117,10 @@
 										<div class="input-group">
 										<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
 										<select name="categoriaPai" class="form-control select">
-										<<option value="null">Nenhum</option>										
-                                            <?php
-                                                include ('../bd/config.php');
-                                                $consulta_categoria = "SELECT * FROM produto_categoria WHERE id_pai is NULL ORDER BY descricao;";
-                                                $result = $conn->query($consulta_categoria);
+											<option value="null">Nenhum</option>
+											  <?php											  	                                               
+											  	require_once('../dao/categoriaProdutoDAO.php');		 		
+                                                $result = findAllOnlyCategoria();                                                                                                
                                                 if ($result->num_rows >0){
                                                 	 while ($categoria = $result->fetch_assoc()) {
                                                 		if ($idPai == $categoria['id']){
@@ -134,8 +130,8 @@
                                                 		}                                                    
                                                 	}	
                                                 }                                               
-                                            ?>
-                                            </select>											
+                                            ?>									                                          
+                                        </select>											
 										</div>
 										<span class="help-block">Informe este campo caso o mesmo seja uma subcategoria de uma categoria.</span>
 									</div>
