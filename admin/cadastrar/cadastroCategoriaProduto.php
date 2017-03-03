@@ -116,7 +116,7 @@
 									<div class="col-md-6 col-xs-12">
 										<div class="input-group">
 										<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-										<select name="categoriaPai" class="form-control select">
+										<select name="categoriaPai" class="form-control">
 											<option value="null">Nenhum</option>
 											  <?php											  	                                               
 											  	require_once('../dao/categoriaProdutoDAO.php');		 		
