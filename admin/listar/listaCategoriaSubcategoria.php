@@ -141,7 +141,7 @@
 						}
 						function Deletar(){						
 							var acao = "deletaCategoria";
-							window.location= "../dao/categoriaProdutoDAO.php?id="+codigo+"&acao="+acao;
+							window.location= "<?php echo DAO; ?>/categoriaProdutoDAO.php?id="+codigo+"&acao="+acao;
 						}
 						</script>
 					</div>

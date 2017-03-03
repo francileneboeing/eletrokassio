@@ -97,7 +97,7 @@
 									<div class="col-md-6 col-xs-12">
 										<div class="input-group">
 											<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-											<input name="codigo" type="text" class="form-control" required="required" readonly value="<?php echo $id.'. ah: '.$idPai?>">
+											<input name="codigo" type="text" class="form-control" required="required" readonly value="<?php echo $id; ?>">
 										</div>										
 									</div>
 								</div>

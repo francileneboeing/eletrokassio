@@ -10,7 +10,7 @@ if ($_POST['acao'] != null){
 			break;
 	}	
 }
-if ($_POST['acao'] != null){
+if ($_GET['acao'] != null){
 	switch ($_GET['acao']) {
 		case "deletaCategoria":
 		    $id = $_GET['id'];
