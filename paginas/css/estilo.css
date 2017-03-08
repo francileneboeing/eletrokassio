@@ -1,29 +1,32 @@
-﻿* {
-	margin: 0;
+﻿@import url('https://fonts.googleapis.com/css?family=Exo+2|Exo:200,300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+* {
+	margin: 0 auto;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	background-repeat: no-repeat;
+	text-decoration: none;
 }
-
-::selection {
-	background: #fbfbfb;
-	color: #fff;
-}
-
 body {
 	color: #a48d66;
-	font: 14px/23px proxima-nova-alt, "Proxima Nova Alt", sans-serif;
-	background-color: #fbfbfb;
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+	text-align: center;
+	font-weight: 300;
 }
 
 h1, h2, h3, h4, b {
-	font-weight: 300;
-	font-family: bree-web, Bree, sans-serif;
+	font-weight: 200;
+	font-family: 'Exo', sans-serif;
+}
+b {
+	font-weight: 600;
 }
 h2 {
-	font-size: 28px;
+	font-size: 21px;
 	padding-bottom: 60px;
 }
 b {
@@ -31,129 +34,190 @@ b {
 	font-size: 16px;
 
 	color: #c3522f;
-}/* ##############################################################  BANNER  ############################################################# */
-
-#banner h1.titulo, #banner div.subtitulo {
-	color: #fff;
-	text-shadow: 1px 1px 2px #606060;
-	 -webkit-text-shadow: 1px 1px 2px #606060;
-	 -moz-text-shadow: 1px 1px 2px #606060;
-	text-align: left;
-	margin: 0 auto;
-	width: 680px;
-	padding: 0 400px 0 0;
-	opacity: 1;
-	position: relative;
-	z-index: 2;
 }
 
-#banner div.banner {
-	background: rgba(71, 41, 17, 0.2);
-	position: absolute;
-	left: 0;
-	top:0;
-	padding:0 0;
-	width: 100%;
-	min-height: 100%;
-	z-index: 0;
+header {
+	height: auto;
 }
-#banner h1.titulo {
-	margin-top: 300px;
-	font-size: 55px;
-	text-transform: uppercase;
-}
-#banner div.subtitulo {
-	font-size: 22px;
-	font-weight: 100;
-	margin-top: 10px;
-	margin-left: 5px;
-}
-#banner a.saibamais {
-	color: #fff;
-	border: 3px solid #fff;
+header a.logo {
+	margin: 20px 0;
 	float: left;
-	width: auto;
-	padding: 7px 15px;
-	margin-top: 20px;
-	margin-left: 2px;
-	font-size: 17px;
-	font-weight: bold;
+}
+nav {
+	max-width: 700px;
+	width: 100%;
+	margin-top: 80px;
+	float: right;
+}
+nav ul {
+	float: right;
+}
+nav ul li {
+	float: left;
 	display: inline-block;
-	background: rgba(255,255,255,.05);
-	opacity: 1;
-	position: relative;
-	z-index: 2;
+	margin: 0 0 0 15px;
 }
-#banner a.saibamais:hover {
-	background: rgba(255,255,255,1);
-	color: #3b2314;
-	border-radius: 55px;
-		-webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+.conteudo {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0px 5% 0px 5%;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
 }
-/*    SLIDE  */
-#bloco-inicial  {
+section {
+	width: 100%;
+}
+section h1 {
+	font-size: 30px;
+	color: #3c7025;
+	font-weight: 300;
+	width: 100%;
+	text-align: left;
+	margin-top: 70px;
+	background-image: url('../images/relampago.png');
+	background-position: center left;
+	padding: 20px 0 20px 70px;
+}
+/* ###################################################  section. CATEGORIAS DESTAQUE  ################################################# */
+.cat-destaque .item a h2,
+.prod-destaque .item a h4 {
+	color: #ff9333;
+	font-weight: 300;
+	float: left;
+	margin: 0 10%;
+	margin-top: 20px;
+	width: 80%;
+	text-align: center;
+	padding: 5px 0 10px 0;
+	border-bottom: 3px solid transparent;
+	-moz-border-image: -moz-linear-gradient(left, #fcc802 0%, #fdc801 100%);
+	-webkit-border-image: -webkit-linear-gradient(right, #a0ff9f 0%, #fcc802 100%);
+	border-image-slice: 1;
+	font-size: 20px;
+}
+.cat-destaque .item a:hover > h2, 
+.prod-destaque .item a:hover > h4 {
+	font-weight: 500;
+}
+.prod-destaque .item a h2 {
+	margin: 0;
+	float: left;
+	padding: 0;
+	width: 80%;
+	text-align: left;
+	padding: 5px 0 5px 0;
+	margin: 0 10%;
+	font-weight: 500;
+	color: #3c7025;
+}
+
+.prod-destaque .item a h2:hover {
+	font-weight: 700;
+}
+.prod-destaque .item a h4 {
+	font-size: 13px;
+	text-align: left;
+	font-family: 'Roboto', sans-serif;
+	border: none;
+	color: #3c7025;
+}
+.prod-destaque .item {
+	border: 1px solid #fdc801;
+	float: left;
+	padding: 50px 20px;
+	width: 90%;
+	margin: 0 5%;
+}
+/* ##############################################################  SLIDE  ############################################################# */
+.slide .li-slide  {
 	position: relative;
-	min-height: 700px;
+	min-height: 400px;
 	width: 33%;
 	height: 100%;
 	!important top: 0;
-	!important left: 00;
-	background-size: cover;
+	!important left: 0;
 	background-position: center center;
-
+	background-size: cover;
+	background-color: #4db94c;
+	color: white;
 }
-#cont-slide {
+.cont-slide {
 	float: left;
 	top: 0;
+	float: right;
+	min-width: 350px;
+	width: 35%;
+	margin-right: 15%;
+	margin-top: 100px;
+	text-align: left;
 }
-.banner {
+.cont-slide h1 {
+	font-size:35px;
+}
+.cont-slide p {
+	font-size: 16px;
+	margin: 10px 0 20px 0;
+}
+.cont-slide a {
+	color: white;
+	float: left;
+	text-decoration: none;
+	border: 2px solid white;
+	background-color: none;
+	padding: 5px 10px;
+}
+.cont-slide a:hover {
+	color: #888;
+	background-color: white;
+	padding: 5px 10px;
+}
+.slide {
 	position: relative;
 	overflow: auto;
 }
-.banner li {
+.slide li {
 	list-style: none;
 }
-.banner ul {	
+.slide ul {	
 	position: relative;
 	top: 0;
 	left:0;
 	padding:0;
 	margin: 0;
 }
-.banner ul li {
+.slide ul li {
 	display: block;
 	float: left;
 	width: 33%;
-/*		-webkit-background-size: 100% 100%;*/
 	-moz-background-size: 100% 100%;
 	-o-background-size: 100% 100%;
 	-ms-background-size: 100% 100%;
-/*		background-size: 100% 100%;*/
-	box-shadow: inset 0 -3px 6px rgba(0,0,0,.1);
 	position: relative;
 	top: 0;
 	left:0;
 	margin: 0;
 }
-
-.banner .dots {
-	position: absolute;
+.slide .dots {
+	position: relative;
 	left: 0;
 	right: 0;
-	bottom: 30px;
+	bottom: 20px;
 	text-align: right;
-	width: 1060px;
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 5%;
 	margin: 0 auto;
+	height: 30px;
 }
-.banner .dots li {
+.slide .dots li {
 	display: inline-block;
-	width: 10px;
-	height: 10px;
+	width: 50px;
+	height: 7px;
 	margin: 0 4px;
 	text-indent: -999em;
 	border: 2px solid #fff;
-	border-radius: 6px;
+	border-radius: 0px;
 	cursor: pointer;
 	opacity: .4;
 	-webkit-transition: background .5s, opacity .5s;
@@ -161,7 +225,7 @@ b {
 	transition: background .5s, opacity .5s;
 	color: rgba(255,255,255,0);
 }
-.banner .dots li.active {
+.slide .dots li.active {
 	background: #fff;
 	opacity: 1;
 }
