@@ -182,5 +182,36 @@
 	</div>
 </section>
 
+<section class="minhaobra">
+	
+</section>
+<section class="blog">
+	<div class="conteudo">
+		<h1>blog</h1>
+		<blockquote>
+			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<h2>Como deixar sua casa bem iluminada</h2>
+			<a href="#">+</a>
+		</blockquote>
+		<blockquote>
+			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<h2>Como deixar sua casa bem iluminada</h2>
+			<a href="#">+</a>
+		</blockquote>
+		<blockquote>
+			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<h2>Como deixar sua casa bem iluminada</h2>
+			<a href="#">+</a>
+		</blockquote>
+		<div class="clear"></div>
+	</div>
+</section>
+<section class="newsletter"></section>
+<section>
+	<div class="conteudo">
+		<h1>localização</h1>
+	</div>
+	<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14073.118443659578!2d-49.115873!3d-28.137975!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82885e3b28464a66!2sEletro+Kassio!5e0!3m2!1spt-BR!2sbr!4v1489023633287" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
 <!-- RODAPÉ -->
 <?php setFooter(); ?>
