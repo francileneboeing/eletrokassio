@@ -27,6 +27,11 @@
                             <li class="l-cadastro-produto-categoria">                               
                             <li><a href="<?php echo LISTAR; ?>/listaCategoriaSubcategoria.php"><span class="fa fa-list-ul"></span> Categorias</a></li>                                                                        
                             </li>                                                        
+                        </ul>
+                        <ul>
+                            <li class="l-cadastro-produto-marca">                               
+                            <li><a href="<?php echo LISTAR; ?>/listaMarca.php"><span class="fa fa-list-ul"></span> Marcas</a></li>                                                                        
+                            </li>                                                        
                         </ul>                        
                     </li>
                 </li>

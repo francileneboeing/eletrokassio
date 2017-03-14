@@ -1,7 +1,6 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
-
-<?php //include('../dao/categoriaProdutoDAO.php'); ?>
+<?php include('../dao/categoriaProdutoDAO.php'); ?>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
 	
@@ -25,36 +24,32 @@
 			<li>Inicio</li>
 			<li>Cadastros</li>
 			<li>Produto</li>
-			<li>Categoria</li>
-			<li>Categoria</li>
+			<li>Categoria</li>			
 			<li>Adicionar</li>
 			<li class="active">Cadastro de Categoria</li>
 		</ul>
 		<!-- END BREADCRUMB -->		
 		<?php
-          $id           = null;
-          $descricao    = null;
-          $icativo      = 1;
-          $idPai        = null;
-          $isChecked    = "checked";
-         
+                $id           = null;
+                $descricao    = null;
+                $icativo      = 1;
+                $idPai        = null;
+                $isChecked    = "checked";
 		 if (!empty($_GET['id'])){
 		 	$id = $_GET['id'];
-		 	if ($id > 0){
-		 		require_once('../dao/categoriaProdutoDAO.php');		 		
-		 		$row = findByID($id);
-		 		if ($row != null){
-		 			$descricao = $row['descricao'];
-		 			$icativo   = $row['icativo'];
-		 			$idPai     = $row['id_pai'];
-		 			if ($icativo != 1){		 				
-						$isChecked = "";						
-		 			}		 		
-		 		}		 				 				 		
+		 	if ($id > 0){		 		
+                            $row = findByID($id);
+                            if ($row != null){
+                                $descricao = $row['descricao'];
+                                $icativo   = $row['icativo'];
+                                $idPai     = $row['id_pai'];
+                                if ($icativo != 1){		 				
+                                     $isChecked = "";						
+                                }		 		
+                            }		 				 				 		
 		 	}
-		 }else{	 	
-		 	require_once('../dao/categoriaProdutoDAO.php');		 		
-		 	$id = findMaxID();
+		 }else{	 			 		 	
+                    $id = findMaxID();
 		 }	
 		?>
 	    <!-- PAGE CONTENT WRAPPER -->
@@ -118,8 +113,7 @@
 										<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
 										<select name="categoriaPai" class="form-control">
 											<option value="null">Nenhum</option>
-											  <?php											  	                                               
-											  	require_once('../dao/categoriaProdutoDAO.php');		 		
+											  <?php											  	                                               											  	
                                                 $result = findAllOnlyCategoria();                                                                                                
                                                 if ($result->num_rows >0){
                                                 	 while ($categoria = $result->fetch_assoc()) {
@@ -149,7 +143,7 @@
 							</div>
 							<div class="panel-footer">
 								<a href="<?php echo LISTAR ?>/listaCategoriaSubcategoria.php" class="btn btn-big btn-primary pull-left"><span class="fa fa-th-list"></span> Listar Categorias</a>								
-								<button class="btn btn-big btn-primary pull-right">Cadastrar</button>
+								<button class="btn btn-big btn-primary pull-right">Salvar</button>
 							</div>
 						</div>
 					</form>
