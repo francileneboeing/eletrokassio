@@ -2,6 +2,7 @@
 <?php include('../restrito.php'); ?>
 <?php include('../dao/categoriaProdutoDAO.php'); ?>
 
+
 <div class="page-container">	
 	<?php include('../sidebar.php'); ?>
 	<script>
@@ -73,7 +74,8 @@
 								</thead>
 								<tbody>
 									<?php										
-										include('../limitaTexto.php');										
+										//include('../limitaTexto.php');
+                                                                                //include('../utils/utils.php');
 										$result = findAll();
 										if ($result->num_rows > 0){
 											while ($categoria = $result->fetch_assoc()) {
@@ -92,11 +94,11 @@
 												}else{
 													$descriaoStatus = "Inativo";
 												}
-												$limite = 40;
+												//$limite = 3;
 												echo "<tr>";
-												echo "<td>".$id."</td>";
-												echo "<td>".limitarTexto($descricao, $limite)."</td>";
-												echo "<td>".limitarTexto($descricaoCategPai, $limite)."</td>";		
+												echo "<td>".formatNumber($id)."</td>";
+												echo "<td>".limitarTexto($descricao, 5)."</td>";
+												echo "<td>".limitarTexto($descricaoCategPai, 5)."</td>";		
 												echo "<td class=\" \" id=\"left\">";								
 											    if($icAtivo == 1){
 													echo "<a href=\"".DAO."/categoriaProdutoDAO.php?acao=alteraStatusCategoriaProduto&id=".$id."&status=0\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #5ba;\"></p></a>";

@@ -2,6 +2,7 @@
 
 include('../restrito.php');
 include('../header.php');
+require_once('../utils/utils.php');
 
 if ($_POST['acao'] != null) {
     switch ($_POST['acao']) {
@@ -100,7 +101,7 @@ function findMaxID() {
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $id = str_pad($row['maior'], 6, '0', STR_PAD_LEFT);
+        $id = formatNumber($row['maior']);  //str_pad($row['maior'], 6, '0', STR_PAD_LEFT);
     }
     $conn->close();
     return $id;

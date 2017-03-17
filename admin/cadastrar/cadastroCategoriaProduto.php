@@ -1,6 +1,7 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
 <?php include('../dao/categoriaProdutoDAO.php'); ?>
+<?php require_once('../utils/utils.php'); ?>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
 	
@@ -40,6 +41,7 @@
 		 	if ($id > 0){		 		
                             $row = findByID($id);
                             if ($row != null){
+                                $id        = formatNumber($row['id']);
                                 $descricao = $row['descricao'];
                                 $icativo   = $row['icativo'];
                                 $idPai     = $row['id_pai'];
@@ -114,18 +116,18 @@
 										<select name="categoriaPai" class="form-control">
 											<option value="null">Nenhum</option>
 											  <?php											  	                                               											  	
-                                                $result = findAllOnlyCategoria();                                                                                                
-                                                if ($result->num_rows >0){
-                                                	 while ($categoria = $result->fetch_assoc()) {
-                                                		if ($idPai == $categoria['id']){
-                                                			echo "<option value=\"".$categoria['id']."\" selected>".$categoria['id']." - ".$categoria['descricao']."</option>";	
-                                                		}else{
-                                                			echo "<option value=\"".$categoria['id']."\">".$categoria['id']." - ".$categoria['descricao']."</option>";
-                                                		}                                                    
-                                                	}	
-                                                }                                               
-                                            ?>									                                          
-                                        </select>											
+                                                                                                $result = findAllOnlyCategoria();                                                                                                
+                                                                                                if ($result->num_rows >0){
+                                                                                                         while ($categoria = $result->fetch_assoc()) {
+                                                                                                                if ($idPai == $categoria['id']){
+                                                                                                                        echo "<option value=\"".$categoria['id']."\" selected>".$categoria['id']." - ".$categoria['descricao']."</option>";	
+                                                                                                                }else{
+                                                                                                                        echo "<option value=\"".$categoria['id']."\">".$categoria['id']." - ".$categoria['descricao']."</option>";
+                                                                                                                }                                                    
+                                                                                                        }	
+                                                                                                }                                               
+                                                                                             ?>									                                          
+                                                                                </select>											
 										</div>
 										<span class="help-block">Informe este campo caso o mesmo seja uma subcategoria de uma categoria.</span>
 									</div>

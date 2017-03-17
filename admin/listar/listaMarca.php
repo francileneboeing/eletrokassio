@@ -87,7 +87,7 @@
 												}
 												$limite = 40;
 												echo "<tr>";
-												echo "<td>".$id."</td>";
+												echo "<td>".formatNumber($id)."</td>";
 												echo "<td>".limitarTexto($descricao, $limite)."</td>";														
 												echo "<td class=\" \" id=\"left\">";								
                                                                                                 if($icAtivo == 1){
@@ -115,33 +115,31 @@
 		</div>
 		<!-- danger -->
 		<div class="message-box animated fadeIn" id="message-box">
-				<div class="mb-container">
-					<div class="mb-middle">
-						<div class="mb-title"><span class="fa fa-trash-o"></span> Deletar marca? Essa ação não poderá ser desfeita. <?php echo $variavelphp; ?></div>
-						<div class="mb-content">
-							<p id="p-message-box">
-								
-							</p>
-						</div>
-						<div class="mb-footer">
-							<button class="btn btn-danger btn-lg pull-right mb-control-close">Não</button>
-							<button onclick="Deletar();" style="margin-right:10px;"  class="btn btn-success btn-lg pull-right">SIM</button>							
-						</div>
-						<script type="text/javascript">
-						var codigo;
-						function ConfirmDeletar(id){
-							document.getElementById("p-message-box").innerHTML = 'Você tem certeza que deseja deletar a marca de código '+id+"?";
-							codigo = id;
-						}
-						function Deletar(){						
-							var acao = "deletaCategoria";
-							window.location= "<?php echo DAO; ?>/marcaDAO.php?id="+codigo+"&acao="+acao;
-						}
-						</script>
-					</div>
-				</div>
-			</div>
+                    <div class="mb-container">
+                            <div class="mb-middle">
+                                    <div class="mb-title"><span class="fa fa-trash-o"></span> Deletar marca? Essa ação não poderá ser desfeita. <?php echo $variavelphp; ?></div>
+                                    <div class="mb-content">
+                                            <p id="p-message-box">
 
-		</div>
+                                            </p>
+                                    </div>
+                                    <div class="mb-footer">
+                                            <button class="btn btn-danger btn-lg pull-right mb-control-close">Não</button>
+                                            <button onclick="Deletar();" style="margin-right:10px;"  class="btn btn-success btn-lg pull-right">SIM</button>							
+                                    </div>
+                                    <script type="text/javascript">
+                                    var codigo;
+                                    function ConfirmDeletar(id){
+                                            document.getElementById("p-message-box").innerHTML = 'Você tem certeza que deseja deletar a marca de código '+id+"?";
+                                            codigo = id;
+                                    }
+                                    function Deletar(){													
+                                            window.location= "<?php echo DAO; ?>/marcaDAO.php?id="+codigo+"&acao=deletaMarca";
+                                    }
+                                    </script>
+                            </div>
+                    </div>
+                </div>
+	</div>
 	</div>
 	<?php include('../footer.php');?>

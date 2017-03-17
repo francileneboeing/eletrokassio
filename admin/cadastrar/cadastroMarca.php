@@ -1,6 +1,7 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
 <?php include('../dao/marcaDAO.php'); ?>
+
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
 
@@ -40,10 +41,11 @@
             if ($id > 0) {
                 $row = findByID($id);
                 if ($row != null) {
-                    $id = str_pad($row['id'], 6, '0', STR_PAD_LEFT);
+                    $id            = formatNumber($row['id']);
                     $descricao     = $row['descricao'];
                     $icativo       = $row['icativo'];                    
-                    $caminhoImagem ='../upload/marca/'.$row['descricao_foto'].'.'.$row['extensao_foto'];
+                    $caminhoImagem = FOTOS_MARCA_ABSOLUTO.'/'.$row['descricao_foto'].'.'.$row['extensao_foto'];                    
+
                     if ($icativo != 1) {
                         $isChecked = "";
                     }
@@ -51,6 +53,8 @@
             }
         } else {
             $id = findMaxID();
+            $hiddenDiv     = "hidden";
+            $requiredImage = "required";
         }
         ?>
         <!-- PAGE CONTENT WRAPPER -->
@@ -109,10 +113,18 @@
                                         <span class="help-block">Insira uma descrição para a Marca</span>
                                     </div>
                                 </div>
+                                <div class="form-group" <?php echo $hiddenDiv; ?>>
+                                    <label class="col-md-3 col-xs-12 control-label">Imagem Atual</label>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div>                                            
+                                            <img name="img" src="<?php echo $caminhoImagem; ?>">
+                                        </div>                                        
+                                    </div>
+                                </div>                                
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Imagem<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">                                                                                                                              
-                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem ?>" required>                                        
+                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem.' '.$requiredImage ?>" >                                        
                                         <span class="help-block">Selecione a imagem de logo da marca. <strong style="color:red;">O tamanho máximo recomendado é de 100kb.</strong> Tamanho ideal: <strong>150x200</strong></span>
                                     </div>
                                 </div>	
