@@ -6,8 +6,6 @@
 <!-- HOME -->
 <?php getHome(); ?>
 
-<script src="<?php setHome(); ?>/paginas/js/jquery-1.7.min.js" type="text/javascript" /></script>
-<script src="<?php setHome(); ?>/paginas/js/unslider.min.js"></script>
 <script>
 		$(function() {
 			$('.slide').unslider({
@@ -26,7 +24,6 @@
 	<ul>
 		<li class="li-slide" style="background-image: url('<?php echo setHome(); ?>/paginas/images/banner-1.png');">
 				<div class="conteudo">
-					<div class="slide"></div>
 					<blockquote class="cont-slide">
 						<h1>Sinta-se bem</h1>
 						<p>Profissionais especializados vão deixar a sua casa do seu jeito.</p>
@@ -36,7 +33,6 @@
 		</li>
 		<li class="li-slide">
 				<div class="conteudo">
-				<div class="slide"></div>
 					<div class="cont-slide">
 						<h1 class="titulo">SLIDE #2</h1>
 					</div>
@@ -182,10 +178,18 @@
 	</div>
 </section>
 <section class="minhaobra top">
-	<div class="conteudo"></div>
+	<div class="conteudo">
+		<p>
+			Sent eum quaeseritis molesciis et lam non nihiciisquia dolupturerum hillam aut qui alissinci quatio mil eatia ipiteni enient late dolo milibus voluptatur sima cuptaep udaerfe ratur? Quis accae explatur susciti coribusa sum, consequ idebisque voluptatur? Excepellab ilitat deriorum hite delectur ad maximpo rumquas ut hit fugia voluptam a di comnist, ex ex ex exceaquia eum facidunt am quaecumque saectur aut omnim ratio. Et et, quo blaccusda ent.<br>
+			Nem volor aut quos exceaquunt utemquam, ullabores et laut ut aspe postiis mo et volorrum explat.
+			Git es magnimus, volorepra doles el inciatur ressit explacc usdaepero et.
+		</p>
+	</div>
 </section>
 <section class="minhaobra">
-	
+	<div class="conteudo">
+		<iframe class="video" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FEletroKassio%2Fvideos%2F825180717596788%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+	</div>
 </section>
 <section class="blog">
 	<div class="conteudo">
@@ -208,7 +212,9 @@
 		<div class="clear"></div>
 	</div>
 </section>
-<section class="newsletter"></section>
+<section class="newsletter">
+	<div class="conteudo"></div>
+</section>
 <section>
 	<div class="conteudo">
 		<h1>localização</h1>

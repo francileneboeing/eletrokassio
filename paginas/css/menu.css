@@ -1,0 +1,406 @@
+#aparecemenu {
+	float: left;
+	width: 100%;
+	height: 20px;
+	border: 1px solid red;
+}
+/* ##############################################################  MENU INICIAL  ############################################################# */
+#menu {
+	margin: 0 auto;
+	text-align: left;
+	width: 55%;
+	z-index: 3;
+	position: relative;
+	z-index: 201;
+	float: right;
+	margin-top: 90px;
+}
+#menu ul {
+	width: 100%;
+	max-width: 1100px;
+}
+#menu ul img {
+	margin-top: 10px;
+
+}
+#menu ul lis {
+	width: 100%;
+	float: right;
+	text-align: right;
+	padding-bottom: 5px;
+	font-size: 14px;
+	border-bottom: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(left, #fcc802 0%, #fdc801 100%);
+    -webkit-border-image: -webkit-linear-gradient(right, #a0ff9f 0%, #fcc802 100%);
+    border-image-slice: 1;
+}
+#menu ul li {
+	display: inline-table;
+	color: #333333;
+}
+#menu ul li a {
+	text-decoration:none;
+	color: #338033;
+	margin: 0 20px;
+	font-weight: 500;
+}
+#menu ul li a:hover {
+	color: #ff9333;
+}
+/* MENU (Header)
+----------------------------------------------- */
+/* Header
+----------------------------------------------- */
+#header {
+	width: 100%;
+	left: 0;
+	padding: 0;
+	position: fixed;
+	overflow: visible;
+	display: block;
+	background: none;
+	transition: background-color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	height: 80px;
+	padding: 8px 0 0 0;
+	top: -100px;
+	z-index: 6;
+}
+#header.scroll-background {
+	background-color: #80ff80;
+	top: 0;
+	height: 60px;
+}
+#header.hidden {
+	transition: background-color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+}
+.admin-bar #header { /* moves header below admin bar when logged in */
+	top: 28px;
+}
+#logo img {
+	max-height: 100%;
+}
+#header-content {
+	position: relative;
+	max-width: 1060px;
+	margin: 0 auto;
+	left: -9000px;
+}
+#header.scroll-background #header-content {
+	left: 0;
+}
+#logo {
+	float: left;
+	max-width: 250px;
+	padding-top: 5px;
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	position: relative;
+	bottom: 20px;
+}
+#header.scroll-background #logo img {
+	max-width: 35%;
+	margin: 10px 0 0 0;
+}
+#logo h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+nav#top-menu {
+	float: right;
+	padding: 0;
+	border: 0;
+}
+
+nav#top-menu {
+	margin: 0 auto;
+	text-align: left;
+	border-bottom: 2px solid #fff;
+	position: absolute;
+	width: 1060px;
+	height:100px;
+	margin-top: -10px;
+	}
+#header.scroll-background nav#top-menu {
+	height:50px;
+	border-bottom: none;
+	top: 13px;
+}
+#header.scroll-background nav#top-menu ul {
+	margin-top: 5px;
+}
+nav#top-menu ul {
+	float: right;
+	margin-top: 58px;
+	width: 100%;
+	max-width: 1100px;
+}
+nav#top-menu ul lis {
+	width: 60%;
+	float: right;
+	text-align: right;
+}
+nav#top-menu ul li {
+	display: inline-table;
+	color: #fff;
+}
+a.logo-top-menu {
+	float: left;
+	zoom:40%;
+	padding: 0 40px 20px 40px; 
+	margin-top:-15px; 
+	border-radius: 20px; 
+	opacity: 0;
+}
+#header.scroll-background nav#top-menu a.logo-top-menu {
+	opacity: 1;
+}
+
+#header.scroll-background nav#top-menu ul li a {
+	font-size:14px;
+	font-weight: 700;
+}
+nav#top-menu ul li a {
+	text-decoration:none;
+	color: #338033;
+	margin: 0 20px;
+	font-weight: 500;
+}
+nav#top-menu ul li a:hover {
+	color: #ff9333;
+}
+nav#top-menu ul li:hover {
+	cursor: pointer;
+	padding-bottom: 5px;
+}
+
+/* acaba MENU */
+/* ----------------------------- SUB MENU --------------------------- */
+ul.sub-menu {
+	text-align: left;
+	position: absolute;
+	text-decoration: none;
+	list-style: none;
+  	border-radius: 5px;
+/*	background: rgba(99,49,0,1.00);
+*/}
+nav#top-menu li a.mais {
+	font-size: 30px;
+	display: block;
+	padding: 0;
+	position: relative;
+	top: 20px;
+}
+nav#top-menu li a.mais:hover {
+	font-size: 30px;
+	padding: 0;
+	border: none;
+	color: #fff;
+}
+nav#top-menu ul ul {
+	display: none;
+}
+nav#top-menu ul li:hover ul {
+	display: block;
+	position: absolute;
+	width: auto;
+	padding: 0;
+	top: 100%;
+	margin: 30px 0 0 -30px;
+	background-color: #ff9333;
+	border-radius: 10px;
+}
+nav#top-menu ul ul li {
+	float: none;
+	position: relative;
+	width: 100%;
+	margin: 10px;	
+	width: 138px;
+	text-transform: lowercase;
+	padding: 5px 0;
+	
+}
+nav#top-menu ul li ul li.current-menu-item a, nav#top-menu ul ul li.current-menu-item a:hover {
+	border: none;
+	color: #ccc;
+}
+nav#top-menu ul li ul li a:hover {
+	border: none;
+	color: #fff;
+}
+
+/* Slicknav
+----------------------------------------------- */
+
+.slicknav_menu {
+	position: absolute;
+	z-index: 3000;
+	display: none;
+	margin-top: 0;
+	list-style: none;
+	text-decoration:  none;
+}
+.slicknav_menu li {
+	list-style: none;
+	text-decoration:  none;
+}
+
+.slicknav_btn { 
+	position: relative; 
+	display: block; 
+	vertical-align: middle; 
+	float: right; 
+	padding: 0.9em 0 0.9em 0.9em; 
+	line-height: 1.125em; 
+	cursor: pointer; 
+}
+.slicknav_menu  .slicknav_menutxt { 
+	display: block; 
+	line-height: 2em;
+	padding: 0 7px; 
+	float: left; 
+}
+.slicknav_menu .slicknav_icon { 
+	float: left;
+	margin: 10px;
+}
+.slicknav_menu .slicknav_icon-bar { 
+	display: block; 
+	width: 1.125em; 
+	height: 0.200em; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	border-radius: 5px;
+}
+
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { 
+	margin-top: 0.188em 
+}
+.slicknav_btn { /* Button */
+	margin: 5px 5px 6px;	
+	text-decoration: none;	
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;  
+	background-color: #ff9333;
+}
+.slicknav_menu .slicknav_menutxt {	/* Button Text */
+	color: #CDE2FF;
+	text-indent: 0;
+	z-index:2000;
+	font-weight: bold;
+}
+.slicknav_menu .slicknav_icon-bar { /* Button Lines */
+	background-color: #FFFFFF;
+}
+/* Childs */
+.slicknav_menu ul ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+  text-decoration: none;
+	margin-top:15px;
+	margin-left: -18px;
+	padding: 5px 0;
+	text-align: center;
+}
+.slicknav_menu ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  top: 54px;
+}
+.slicknav_menu ul ul:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+.slicknav_menu ul ul li {
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0;
+  width: 100%;  
+  background-color: #ff9333;
+  border-radius: 5px;
+}
+.slicknav_menu ul ul li a.sub {
+	font-size:12px;
+}
+.slicknav_menu ul ul li a {
+  display: block;
+  width: 110px;
+  font-size: 13px;
+  padding: 10px 0 10px 0;
+  color:#fff;
+}
+.slicknav_menu ul ul li a:hover {
+  border-radius: 5px;
+  color:#fff;
+}
+.slicknav_menu ul ul li:hover {
+	background-color: #6B838E;
+}
+.slicknav_menu ul ul li a:active {
+}
+@media only screen and (min-width: 800px) {
+	#logo img {
+		max-height: 100%;
+		margin-left: 0px;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	#menu {
+		height: 0;
+		transition-duration: 1s;
+	}
+	#header {
+		top:0;
+	}
+}
+@media only screen and (max-width: 1024px) {
+#logo img {
+	position: absolute;
+	left:-9000px;
+}
+.wrap, #header-content, #footer-sidebar, #footer-content {
+	width: 90%;
+}
+.wrap {
+	/*margin-top: 95px;*/
+}
+#primary-menu {
+	display: none;
+}
+.slicknav_menu {
+	display: block;
+	right: 0;
+	top: 10px;
+}
+#header.scroll-background {
+	background-color: rgba(71,41,17,0);
+
+}
+#header-content {
+	position: relative;
+	left: 0;
+}
+nav#top-menu {
+	border-bottom:none;
+}
+
+#menu {
+	left: -9000px;
+}
+#topo {
+	min-height: 0;
+}
+}

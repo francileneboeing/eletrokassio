@@ -43,7 +43,7 @@
                     $id = str_pad($row['id'], 6, '0', STR_PAD_LEFT);
                     $descricao     = $row['descricao'];
                     $icativo       = $row['icativo'];                    
-                    $caminhoImagem = FOTOS_MARCA.'/'.$row['descricao_foto'].'.'.$row['extensao_foto'];
+                    $caminhoImagem ='../upload/marca/'.$row['descricao_foto'].'.'.$row['extensao_foto'];
                     if ($icativo != 1) {
                         $isChecked = "";
                     }
@@ -115,7 +115,10 @@
                                         <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem ?>" required>                                        
                                         <span class="help-block">Selecione a imagem de logo da marca. <strong style="color:red;">O tamanho máximo recomendado é de 100kb.</strong> Tamanho ideal: <strong>150x200</strong></span>
                                     </div>
-                                </div>																
+                                </div>	
+                                <div class="form-group">
+                                    <img src="<?php echo $caminhoImagem; ?>">
+                                </div>															
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Ativo<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">

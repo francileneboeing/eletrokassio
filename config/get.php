@@ -30,9 +30,14 @@
 		require_once('paginas/footer.php');
 	}
 
+	function setMenu() {
+		require_once('paginas/menu.php');
+	}
+
 	function setHome() {
 		echo BASE;
 	}
+
 	function setTitulo() {
 		echo TITULO;
 	}
