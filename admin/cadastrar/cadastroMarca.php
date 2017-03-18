@@ -31,6 +31,7 @@
         </ul>
         <!-- END BREADCRUMB -->		
         <?php
+        include('../utils/utils.php');
         $id = null;
         $descricao = null;
         $icativo = 1;
@@ -39,12 +40,12 @@
         if (!empty($_GET['id'])) {
             $id = $_GET['id'];
             if ($id > 0) {
-                $row = findByID($id);
+                $row = findByIDMarca($id);
                 if ($row != null) {
-                    $id            = formatNumber($row['id']);
-                    $descricao     = $row['descricao'];
-                    $icativo       = $row['icativo'];                    
-                    $caminhoImagem = FOTOS_MARCA_ABSOLUTO.'/'.$row['descricao_foto'].'.'.$row['extensao_foto'];                    
+                    $id = formatNumber($row['id']);
+                    $descricao = $row['descricao'];
+                    $icativo = $row['icativo'];
+                    $caminhoImagem = FOTOS_MARCA_ABSOLUTO . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto'];
 
                     if ($icativo != 1) {
                         $isChecked = "";
@@ -52,8 +53,8 @@
                 }
             }
         } else {
-            $id = findMaxID();
-            $hiddenDiv     = "hidden";
+            $id = findMaxIDMarca();
+            $hiddenDiv = "hidden";
             $requiredImage = "required";
         }
         ?>
@@ -124,13 +125,10 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Imagem<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">                                                                                                                              
-                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem.' '.$requiredImage ?>" >                                        
+                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem . ' ' . $requiredImage ?>" >                                        
                                         <span class="help-block">Selecione a imagem de logo da marca. <strong style="color:red;">O tamanho máximo recomendado é de 100kb.</strong> Tamanho ideal: <strong>150x200</strong></span>
                                     </div>
                                 </div>	
-                                <div class="form-group">
-                                    <img src="<?php echo $caminhoImagem; ?>">
-                                </div>															
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Ativo<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">

@@ -2,12 +2,11 @@
 
 include('../restrito.php');
 include('../header.php');
-require_once('../utils/utils.php');
 
 if ($_POST['acao'] != null) {
     switch ($_POST['acao']) {
         case "cadastraCategoriaProduto":
-            saveOrUpdate();
+            saveOrUpdateCategoria();
             break;
     }
 }
@@ -15,7 +14,7 @@ if ($_GET['acao'] != null) {
     switch ($_GET['acao']) {
         case "deletaCategoria":
             $id = $_GET['id'];
-            delete($id);
+            deleteCategoria($id);
             break;
         case "alteraStatusCategoriaProduto":
             $id = $_GET['id'];
@@ -27,12 +26,12 @@ if ($_GET['acao'] != null) {
 }
 
 //salva ou atualiza uma categoria
-function saveOrUpdate() {
-    include('../connection/config.php');
-    $codigo = addslashes($_POST['codigo']);
-    $descricao = addslashes($_POST['descricao']);
+function saveOrUpdateCategoria() {
+    include('../connection/config.php');    
+    $codigo       = addslashes($_POST['codigo']);
+    $descricao    = addslashes($_POST['descricao']);
     $categoriaPai = addslashes($_POST['categoriaPai']);
-    $ativo = addslashes($_POST['ativo']);
+    $ativo        = addslashes($_POST['ativo']);
     $isUpdate = false;
     if ($ativo != 1) {
         $ativo = 2;
@@ -64,7 +63,7 @@ function saveOrUpdate() {
     }
 }
 
-function delete($id) {
+function deleteCategoria($id) {
     include('../connection/config.php');
     $sql = "SELECT * FROM produto_categoria WHERE id_pai = $id";
     $result = $conn->query($sql);
@@ -81,7 +80,7 @@ function delete($id) {
 }
 
 //busca as informações da categoria
-function findByID($id) {
+function findByIDCategoria($id) {
     include('../connection/config.php');
     $categoria = null;
     $sql = "SELECT * FROM produto_categoria WHERE id = $id";
@@ -94,8 +93,9 @@ function findByID($id) {
 }
 
 //retorna o maior id
-function findMaxID() {
+function findMaxIDCategoria() {
     include('../connection/config.php');
+    include('../utils/utils.php');
     $id = 1;
     $sql = "SELECT coalesce(max(id),0)+1 maior FROM produto_categoria";
     $result = $conn->query($sql);
@@ -115,16 +115,12 @@ function findAllOnlyCategoria() { //busca somente categorias
     return $result;
 }
 
-function findAll() {
+function findAllCategoria() {
     include('../connection/config.php');
     $sql = "SELECT * FROM produto_categoria WHERE icativo = 1 ORDER BY id ";
     $result = $conn->query($sql);
     $conn->close();
     return $result;
-}
-
-function findAllWithFilters() {
-    include('../connection/config.php');
 }
 
 function updateStatusCategoria($id, $status) {

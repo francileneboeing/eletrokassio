@@ -2,13 +2,11 @@
 
 include('../restrito.php');
 include('../header.php');
-include('../utils/classUploadImagem.php');
-include('../utils/utils.php');
 
 if ($_POST['acao'] != null) {
     switch ($_POST['acao']) {
         case "cadastroMarca":
-            saveOrUpdate();
+            saveOrUpdateMarca();
             break;
     }
 }
@@ -16,7 +14,7 @@ if ($_GET['acao'] != null) {
     switch ($_GET['acao']) {
         case "deletaMarca":
             $id = $_GET['id'];
-            delete($id);
+            deleteMarca($id);
             break;
         case "alteraStatusMarca":
             $id = $_GET['id'];
@@ -27,8 +25,10 @@ if ($_GET['acao'] != null) {
 }
 
 //salva ou atualiza uma marca
-function saveOrUpdate() {
+function saveOrUpdateMarca() {
     include('../connection/config.php');
+    include('../utils/utils.php');
+    include('../utils/classUploadImagem.php');
     $sql       = null;
     $name      = null;
     $diretorio = null;
@@ -42,15 +42,13 @@ function saveOrUpdate() {
         $ativo = 2;
     }
     if ($id > 0) {
-        echo 'TESTE 1<br>';
-        $marca = findByID($id);
+        $marca = findByIDMarca($id);
         if ($marca !== null) {
-            echo 'TESTE 2<br>';
             $isUpdate = true;
         }        
         if (!empty($_FILES['img']['tmp_name'])){
             $file = $_FILES['img'];
-            $name         = str_pad($id, 6, '0', STR_PAD_LEFT);
+            $name         = formatNumber($id);
             $diretorio    = FOTOS_MARCA . "/";
             if ($isUpdate){
                 $extension = $marca['extensao_foto'];
@@ -103,10 +101,11 @@ function saveOrUpdate() {
     }
 }
 
-function delete($id) {
+function deleteMarca($id) {
     include('../connection/config.php');
+    include('../utils/utils.php');
     $sql = "DELETE FROM produto_marca WHERE id = $id";
-    $marca = findByID($id);
+    $marca = findByIDMarca($id);
     if ($conn->query($sql) === TRUE) {
         unlink(FOTOS_MARCA.'/'.formatNumber($marca['id']).'.'.$marca['extensao_foto']);
         echo "<script>window.location='" . LISTAR . "/listaMarca.php?return=sucess';</script>";
@@ -117,7 +116,7 @@ function delete($id) {
 
 
 //busca as informações da categoria
-function findByID($id) {
+function findByIDMarca($id) {
     include('../connection/config.php');
     $marca = null;
     $sql = "SELECT * FROM produto_marca WHERE id = $id";
@@ -130,8 +129,9 @@ function findByID($id) {
 }
 
 //retorna o maior id
-function findMaxID() {
+function findMaxIDMarca() {
     include('../connection/config.php');
+    include('../utils/utils.php');
     $id = 1;
     $sql = "SELECT coalesce(max(id),0)+1 maior FROM produto_marca";
     $result = $conn->query($sql);
@@ -143,7 +143,7 @@ function findMaxID() {
     return $id;
 }
 
-function findAll() {
+function findAllMarca() {
     include('../connection/config.php');
     $sql = "SELECT * FROM produto_marca WHERE icativo = 1 ORDER BY id";
     $result = $conn->query($sql);
@@ -166,5 +166,4 @@ function updateStatusMarca($id, $status) {
         echo "<script>window.location='" . LISTAR . "/listaMarca.php?return=error&description=status';</script>";
     }
 }
-
 ?>
