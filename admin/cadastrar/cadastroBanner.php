@@ -91,7 +91,7 @@
                             if (!empty($_GET['return']) && $_GET['return'] == "sucess") {
                                 echo '<div class="alert alert-success" role="alert">';
                                 echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-                                echo '<strong style="margin-right: 5px;"> </strong>Yeah! Banner adicionada com sucesso.';
+                                echo '<strong style="margin-right: 5px;"> </strong>Yeah! Banner adicionado com sucesso.';
                                 echo '</div>';
                             } else if (!empty($_GET['return']) && $_GET['return'] == "error") {
                                 echo '<div class="alert alert-danger" role="alert">';

@@ -14,13 +14,12 @@
             $(".l-cadastro-cliente").addClass("active");
             alteraMascara();
         });
+        
         function alteraMascara() {
             var fieldTipo = document.getElementById("tipo");
-            $('#cpfcnpj').removeAttr('placeholder');
             if (fieldTipo.value == 1) {
                 $('#cpfcnpj').removeClass("cnpj");
                 $('#cpfcnpj').addClass(" cpf");
-                //fieldCpfCnpj.className += " cpf";
             } else {
                 $('#cpfcnpj').removeClass("cpf");
                 $('#cpfcnpj').addClass(" cnpj");
@@ -46,7 +45,7 @@
         $municipioDAO = new MunicipioDAO();
         $clienteDAO   = new ClienteDAO();
         $isChecked   = 'checked';
-        $enviarEmail = 'checked';
+        $isEnviarEmailChecked = 'checked';
         if (!empty($_GET['id'])) {
             $id = $_GET['id'];
             if ($id > 0){
@@ -69,11 +68,8 @@
                         $isChecked = "";
                     }
                     if ($enviarEmail != 1){
-                        $enviarEmail = "";
-                    }else{
-                        $enviarEmail = 'checked';
+                        $isEnviarEmailChecked = "";
                     }
-                    echo 'ativo: '.$ativo.' enviar: '.$enviarEmail;
                     if ($tipo == 1){
                         $isCpfSelected = "selected";
                     }else{
@@ -212,7 +208,7 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input name="telefone" type="text" class="cep form-control"required="required" value="<?php echo $telefone; ?>">
+                                            <input name="telefone" type="text" class="form-control"required="required" value="<?php echo $telefone; ?>">
                                         </div>										
                                         <span class="help-block">Telefone do cliente. Ex: (48) 3466-0000 / (48) 99912-3344</span>
                                     </div>
@@ -253,8 +249,8 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Enviar E-mail<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
-                                        <div class="input-group">																									
-                                            <input id="enviaremail" type="checkbox" name="enviaremail" class="icheckbox" value= "1" <?php echo $enviarEmail; ?>/>
+                                        <div class="input-group">
+                                            <input id="enviaremail" type="checkbox" name="enviaremail" class="icheckbox" value= "1" <?php echo $isEnviarEmailChecked; ?>/>
                                             <span class="help-block">Deixar marcado caso o cliente deseja receber e-mails da empresa</span>
                                         </div>
                                     </div>

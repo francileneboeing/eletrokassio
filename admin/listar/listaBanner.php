@@ -75,7 +75,7 @@
                                 <tbody>
                                     <?php
                                     $bannerDAO = new BannerDAO();
-                                    $result  = $bannerDAO->findAllBanner();
+                                    $result  = $bannerDAO->findAllBanner(false);
                                     if ($result->num_rows > 0) {
                                         while ($banner = $result->fetch_assoc()) {
                                             $id        = $banner['id'];

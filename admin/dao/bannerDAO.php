@@ -148,9 +148,14 @@ class BannerDAO {
         return $id;
     }
 
-    function findAllBanner() {
+    function findAllBanner($isativo) {
         include('../connection/config.php');
-        $sql = "SELECT * FROM banner ORDER BY id";
+        $sql = null;
+        if ($isativo){
+            $sql = 'SELECT * FROM banner WHERE icativo = 1 ORDER BY id';
+        }else{
+            $sql = 'SELECT * FROM banner ORDER BY id';
+        }
         $result = $conn->query($sql);
         $conn->close();
         return $result;

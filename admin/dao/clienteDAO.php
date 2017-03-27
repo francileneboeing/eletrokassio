@@ -78,7 +78,6 @@ class ClienteDAO {
                 $sql = "INSERT INTO cliente(id, nome, tp_cliente,cpf_cnpj,endereco,bairro,numero,id_municipio,cep,email,icenviaemail,telefone,icativo) VALUES ".
                        "( $id, '$nome', '$tipo', '$cpfCnpj', '$endereco', '$bairro', '$numero', $idMunicipio, '$cep', '$email',$enviarEmail,'$telefone',$ativo );";
             }
-            echo 'SQL: '.$sql;
             if ($conn->query($sql) === TRUE) {
                 $conn->close();
                 if ($isUpdate) {

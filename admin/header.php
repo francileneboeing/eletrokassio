@@ -1,15 +1,15 @@
 <?php 
-    define('ADMIN',                 'http://localhost/eletrokassio/admin');
-    define('CADASTRAR',             'http://localhost/eletrokassio/admin/cadastrar');    
-    define('LISTAR',                'http://localhost/eletrokassio/admin/listar');
-    define('BD',                    'http://localhost/eletrokassio/admin/bd');
-    define('DAO',                   'http://localhost/eletrokassio/admin/dao');
-    define('CONNECTION',            'http://localhost/eletrokassio/admin/connection');
-    define('FOTOS_MARCA',           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/marca');
-    define('FOTOS_MARCA_ABSOLUTO', 'http://localhost/eletrokassio/admin/upload/marca');
-    define('FOTOS_BANNER',           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/banner');
-    define('FOTOS_BANNER_ABSOLUTO', 'http://localhost/eletrokassio/admin/upload/banner');
-    define('FOTOS_PRODUTO',         $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/produto');
+    define(ADMIN,                 'http://localhost/eletrokassio/admin');
+    define(CADASTRAR,             'http://localhost/eletrokassio/admin/cadastrar');    
+    define(LISTAR,                'http://localhost/eletrokassio/admin/listar');
+    define(BD,                    'http://localhost/eletrokassio/admin/bd');
+    define(DAO,                   'http://localhost/eletrokassio/admin/dao');
+    define(CONNECTION,            'http://localhost/eletrokassio/admin/connection');
+    define(FOTOS_MARCA,           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/marca');
+    define(FOTOS_MARCA_ABSOLUTO, 'http://localhost/eletrokassio/admin/upload/marca');
+    define(FOTOS_BANNER,           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/banner');
+    define(FOTOS_BANNER_ABSOLUTO, 'http://localhost/eletrokassio/admin/upload/banner');
+    define(FOTOS_PRODUTO,         $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/produto');    
 ?>
 
 <!DOCTYPE html>
@@ -49,13 +49,14 @@
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/themes/default.js'></script>
     
     <script type="text/javascript">
-        $('.cep').mask("00000-000",       {reverse: true, placeholder: "00000-000"});
-        $('.cpf').mask("000.000.000-00",       {reverse: true, placeholder: "000.000.000-00"});
-        $('.cnpj').mask("00.000.000/0000-00",  {reverse: true, placeholder: "00.000.000/0000-00"});
-        $('.money').mask("#.##0,00",       {reverse: true, placeholder: "R$ 0,00"});
-        $('.decimal-2').mask("#.##0,00",   {reverse: true, placeholder: "0,00"});
-        $('.decimal-3').mask("#.##0,000",  {reverse: true, placeholder: "0,000"});
-        $('.decimal-4').mask("#.##0,0000", {reverse: true, placeholder: "0,0000"});
+        $('.cep').mask("00000-000",           {reverse: false, placeholder: "00000-000"});
+        $('.cpf').mask("000.000.000-00",      {reverse: false, placeholder: "000.000.000-00"});
+        $('.cnpj').mask("00.000.000/0000-00", {reverse: false, placeholder: "00.000.000/0000-00"});
+        $('.money').mask("#.##0,00",          {reverse: true,  placeholder: "R$ 0,00"});
+        $('.decimal-2').mask("#.##0,00",      {reverse: true,  placeholder: "0,00"});
+        $('.decimal-3').mask("#.##0,000",     {reverse: true,  placeholder: "0,000"});
+        $('.decimal-4').mask("#.##0,0000",    {reverse: true,  placeholder: "0,0000"});
+        
         function notyConfirm(){
             noty({
                 text: 'Do you want to continue?',
