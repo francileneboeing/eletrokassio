@@ -4,7 +4,7 @@
 <footer>
 	<div class="conteudo">
 		<div class="container ma">
-			<img class="logo" src="<?php echo setHome(); ?>/paginas/images/logo-b.png">
+			<img class="logo" src="<?php echo BASE; ?>/paginas/images/logo-b.png">
 			<div class="mail">
 				<span></span>
 				<p>

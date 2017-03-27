@@ -4,12 +4,12 @@
 
 	<!-- META TAGS EM ../index.php -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="<?php setHome(); ?>/paginas/css/estilo.css" rel="stylesheet" type="text/css">
-	<link href="<?php setHome(); ?>/paginas/css/menu.css" rel="stylesheet" type="text/css">
-	<link href="<?php setHome(); ?>/paginas/css/responsivo.css" rel="stylesheet" type="text/css">
-	<script src="<?php setHome(); ?>/paginas/js/jquery-1.7.min.js" type="text/javascript" /></script>
+	<link href="<?php echo BASE; ?>/paginas/css/estilo.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo BASE; ?>/paginas/css/menu.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo BASE; ?>/paginas/css/responsivo.css" rel="stylesheet" type="text/css">
+	<script src="<?php echo BASE; ?>/paginas/js/jquery-1.7.min.js" type="text/javascript" /></script>
 	<!-- . . . . . . . . MENU . . . . . . . . .-->
-	<script async src="<?php setHome(); ?>/paginas/js/slicknav.js"></script>
+	<script async src="<?php echo BASE; ?>/paginas/js/slicknav.js"></script>
 	<script>
 	// Add Header Class On Scroll
 		jQuery(function() {
@@ -27,14 +27,14 @@
 	</script>
 	<!-- x menu x -->
 	<!-- . . . . . . . . SLIDE . . . . . . . . .-->
-	<script src="<?php setHome(); ?>/paginas/js/unslider.min.js"></script>
+	<script src="<?php echo BASE; ?>/paginas/js/unslider.min.js"></script>
 
 </head>
 <body>
 <div id="topo">
 	<div class="conteudo">
-		<a class="logo" href="<?php setHome(); ?>" title="Eletro Kassio">
-			<img src="<?php setHome(); ?>/paginas/images/logo.png" alt="Eletro Kassio">
+		<a class="logo" href="<?php echo BASE; ?>" title="Eletro Kassio">
+			<img src="<?php echo BASE; ?>/paginas/images/logo.png" alt="Eletro Kassio">
 		</a>
 		<div class="top-topo">
 			<form action="#" method="POST">

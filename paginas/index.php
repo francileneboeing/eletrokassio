@@ -19,10 +19,27 @@
 </script>
 
 
-	
+<?php include('/admin/dao/bannerDAO.php'); ?>
+
+<?php 
+	$bannerDAO = new BannerDAO();
+	$result  = $bannerDAO->findAllBanner();
+	if ($result->num_rows > 0) {
+		while ($banner = $result->fetch_assoc()) {
+			$id        = $banner['id'];
+			$titulo    = $banner['titulo'];
+			$subtitulo = $banner['subtitulo'];
+			$nomeBotao = $banner['descricao_botao'];
+			$urlBotao  = $banner['url_destino'];
+			$icAtivo   = $banner['icativo'];
+			$descriaoStatus = null;
+		}
+	}
+?>
+
 <div id="slide" class="slide">
 	<ul>
-		<li class="li-slide" style="background-image: url('<?php echo setHome(); ?>/paginas/images/banner-1.png');">
+		<li class="li-slide" style="background-image: url('<?php echo BASE; ?>/paginas/images/banner-1.png');">
 				<div class="conteudo">
 					<blockquote class="cont-slide">
 						<h1>Sinta-se bem</h1>
@@ -41,9 +58,9 @@
 	</ul>
 </div>
 <!-- Important Owl stylesheet -->
-<script type="text/javascript" src="<?php setHome(); ?>/paginas/js/modernizr.custom.28468.js"></script>
-<link rel="stylesheet" href="<?php setHome(); ?>/paginas/css/slide.carousel.css">
-<script src="<?php setHome(); ?>/paginas/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE; ?>/paginas/js/modernizr.custom.28468.js"></script>
+<link rel="stylesheet" href="<?php echo BASE; ?>/paginas/css/slide.carousel.css">
+<script src="<?php echo BASE; ?>/paginas/js/owl.carousel.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(document).ready(function() {
@@ -83,37 +100,37 @@
 		<div id="owl-slide" class="owl-carousel">
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>materiais elétricos</h2>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>louças sanitárias</h2>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>materiais elétricos</h2>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>louças sanitárias</h2>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>materiais elétricos</h2>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#">
-					<p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p>
+					<p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p>
 					<h2>louças sanitárias</h2>
 				</a>
 			</div>
@@ -129,43 +146,43 @@
 		<h1>produtos em destaque</h1>
 		<div id="owl-slide-2" class="owl-carousel">
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
 			</div>
 			<div class="item">
-				<a href="#1.1"><p style="background-image: url('<?php setHome(); ?>/paginas/images/cat-1.png');"></p></a>
+				<a href="#1.1"><p style="background-image: url('<?php echo BASE; ?>/paginas/images/cat-1.png');"></p></a>
 				<a href="#1.2"><h4>Torneira monocomando - cromada (cód. 599292)</h4></a>
 				<a href="#2"><h2>+ detalhes</h2></a>
 				<a href="#3"><h2>> orçar</h2></a>
@@ -196,17 +213,17 @@
 	<div class="conteudo">
 		<h1>blog</h1>
 		<blockquote>
-			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<img src="<?php echo BASE; ?>/paginas/images/foto-blog.png">
 			<h2>Como deixar sua casa bem iluminada</h2>
 			<a href="#">+</a>
 		</blockquote>
 		<blockquote>
-			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<img src="<?php echo BASE; ?>/paginas/images/foto-blog.png">
 			<h2>Como deixar sua casa bem iluminada</h2>
 			<a href="#">+</a>
 		</blockquote>
 		<blockquote>
-			<img src="<?php echo setHome(); ?>/paginas/images/foto-blog.png">
+			<img src="<?php echo BASE; ?>/paginas/images/foto-blog.png">
 			<h2>Como deixar sua casa bem iluminada</h2>
 			<a href="#">+</a>
 		</blockquote>

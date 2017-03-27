@@ -37,7 +37,9 @@
 	function setHome() {
 		echo BASE;
 	}
-
+	function setAdmin() {
+		echo ADMIN;
+	}
 	function setTitulo() {
 		echo TITULO;
 	}
