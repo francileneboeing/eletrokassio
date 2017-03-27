@@ -2,7 +2,7 @@
   <ul>
     <lis>
       <li><a href="<?php setHome(); ?>">Início</a></li>
-      <li><a href="<?php setHome(); ?>/sobre">Sobre</a></li>
+      <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
       <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
       <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
       <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>
@@ -23,7 +23,7 @@
         <li><a href="#" aria-haspopup="true" tabindex="0" class="slicknav_btn" style="outline: none;"><span class="slicknav_menutxt"></span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a>
         <ul class="sub-menu">
           <li><a href="<?php setHome(); ?>">Início</a></li>
-          <li><a href="<?php setHome(); ?>/sobre">Sobre</a></li>
+          <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
           <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
           <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
           <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>
@@ -40,7 +40,7 @@
     <a class="logo-top-menu" href="<?php setHome(); ?>"><img src="<?php setHome(); ?>/paginas/images/logo.png"></a>
     <lis>
       <li><a href="<?php setHome(); ?>">Início</a></li>
-      <li><a href="<?php setHome(); ?>/sobre">Sobre</a></li>
+      <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
       <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
       <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
       <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>

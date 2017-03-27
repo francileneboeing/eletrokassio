@@ -72,7 +72,7 @@ section h1 {
 }
 /* HEADER */
 #topo {
-	height: auto;
+	height: 100%;
 	width: 100%;
 	position: relative;
 	z-index: 300;
@@ -97,7 +97,7 @@ section h1 {
 .top-topo form {
 	float: left;
 	margin: 20px 0 0 50px;
-	width: 100%;
+	width: 50%;
 }
 .top-topo form input {
 	border: none;
@@ -129,10 +129,48 @@ section h1 {
 	zoom: 85%;
 	margin-left: -43px;
 }
+.carrinho {
+	float: left;
+	display: inline-block;
+	margin-top: 10px;
+}
+.carrinho p {
+	color: #ff9333;
+	float: left;
+	display: inline-block;
+	text-align: left;
+	font-size: 13px;
+	font-weight: 400;	
+	margin-top: 7px;
+}
+.carrinho a {
+	background-image: url("../images/icon-carrinho.png");
+	padding: 20px;
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+}
+.carrinho a p {
+	padding-top: 4px;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+	font-size: 9px;
+	background-color: #4db94d;
+	color: #fff;
+	margin-left: 25px;
+	margin-top: 6px;
+}
+.carrinho a:hover p {
+	background-color: #80ff80;
+	color: #ff9333;
+	font-weight: bold;
+}
 .login-minhaobra {
 	float: right;
 	width: 180px;
-	height: 250px;
+	height: 270px;
 	background-color: #80ff80;
 	background-image: url('../images/logo-minha-obra.png');
 	background-size: 55%;
@@ -140,7 +178,22 @@ section h1 {
 	margin-bottom: -110px;
 	position: relative;
 	z-index: 5;
-	right: -5px;
+}
+.login-minhaobra p {
+	font-size: 12px;
+	font-weight: 400;
+	color: #4db94d;
+	position: relative;
+	top: 235px;
+	background-image: url('../images/icon-user.png');
+	margin: 0 0 0 25px;
+	padding: 1px 0 30px 0;
+}
+.login-minhaobra p a {
+	color: #4db94d;
+}
+.login-minhaobra p a:hover {
+	color: #338033;
 }
 /* #############  SLIDE  ############# */
 .slide .li-slide  {
@@ -302,26 +355,28 @@ section h1 {
 	border: none;
 	margin-top: 70px;
 	height: auto;
-	height: 400px;
 	background-position: 44% bottom;
 	background-image: url('../images/img-minhaobra.png');
 	background-size: auto 100%;
 	border-bottom: 30px solid #4db94d;
 	margin-bottom: -30px;
 }
+
 .minhaobra.top .conteudo {
-	height: 300px;
 	background-image: url('../images/logo-minha-obra.png');
-	background-position: 100px;
+	background-position: 100px 10px;
+	background-size: auto 250px;
 }
 .minhaobra.top .conteudo p {
 	float: right;
+	display: inline-block;
 	width: 28%;
 	text-align: left;
 	font-size: 13px;
 	line-height: 22px;
 	color: #4db94d;
 	font-weight: 400;	
+	margin-bottom: 20px;
 }
 .minhaobra {
 	background-color: #4db94d;
@@ -346,6 +401,7 @@ section h1 {
 	margin-top: 50px;
 	display: inline-block;
 	border: 1px solid #ff9333;
+	min-width: 340px;
 }
 .blog blockquote img {
 	width: 100%;
@@ -384,6 +440,57 @@ section h1 {
 	background-size: auto 100%;
 	background-position: 5% 0;
 	height: 100%;
+	padding-left: 420px;
+}
+.newsletter .conteudo img {
+	float: left;
+	max-height: 250px;
+	width: auto;
+}
+.newsletter form {
+	float: left;
+	background-image: url('../images/detalhe-news.png');
+	background-size: auto 100%;
+	min-height: 250px;
+	padding-left: 190px;
+	display: inline-block;
+	width: 98%;
+	font-family: 'Exo', sans-serif;
+}
+.newsletter form h2 {
+	width: 100%;
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: 30px;
+	text-align: left;
+}
+.newsletter form input {
+	width: 100%;
+	padding: 10px 5%;
+	margin: 5px 0;
+	float: left;
+	font-family: 'Exo', sans-serif;
+	color: #409540;
+	border: 2px solid white;
+}
+.newsletter form input:focus {
+	letter-spacing: 1px;
+}
+.newsletter form input.submit {
+	width: 100px;
+	float: right;
+	border: 2px solid white;
+	background-color: rgba(0,0,0,0);
+	color: white;
+	font-family: 'Exo', sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+.newsletter form input.submit:hover {
+	background-color: white;
+	color: #409540;
 }
 /* #############    localização    ############# */
 .mapa {
@@ -413,6 +520,7 @@ footer div.container {
 footer div.container img.logo {
 	width: 85%;
 	float: left;
+	max-width: 250px;
 }
 footer div.container.ma {
 	width: 26%;
@@ -420,6 +528,10 @@ footer div.container.ma {
 }
 footer div.container.me {
 	width: 22%;
+}
+footer .fb-page {
+	width: 90%;
+	float: left;
 }
 footer .mail span, footer .fone span, footer .local span {
 	border-bottom: 5px solid transparent;

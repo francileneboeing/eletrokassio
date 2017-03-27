@@ -31,13 +31,13 @@
 					</blockquote>
 				</div>
 		</li>
-		<li class="li-slide">
+		<!-- <li class="li-slide">
 				<div class="conteudo">
 					<div class="cont-slide">
 						<h1 class="titulo">SLIDE #2</h1>
 					</div>
 				</div>
-		</li>
+		</li> -->
 	</ul>
 </div>
 <!-- Important Owl stylesheet -->
@@ -184,6 +184,7 @@
 			Nem volor aut quos exceaquunt utemquam, ullabores et laut ut aspe postiis mo et volorrum explat.
 			Git es magnimus, volorepra doles el inciatur ressit explacc usdaepero et.
 		</p>
+		<div class="clear"></div>
 	</div>
 </section>
 <section class="minhaobra">
@@ -213,7 +214,15 @@
 	</div>
 </section>
 <section class="newsletter">
-	<div class="conteudo"></div>
+	<div class="conteudo"><!-- 
+		<img src="<?php //echo setHome(); ?>/paginas/images/newslleter.jpg"> -->
+		<form action="" method="#">
+			<h2>Cadastre-se</h2>
+			<input type="text" name="nome" placeholder="seu nome" required>
+			<input type="mail" name="email" placeholder="seu e-mail" required>
+			<input class="submit" type="submit" value="enviar">
+		</form>
+	</div>
 </section>
 <section>
 	<div class="conteudo">

@@ -3,9 +3,10 @@
 <head>
 
 	<!-- META TAGS EM ../index.php -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="<?php setHome(); ?>/paginas/css/estilo.css" rel="stylesheet" type="text/css">
-	<link href="<?php setHome(); ?>/paginas/css/responsivo.css" rel="stylesheet" type="text/css">
 	<link href="<?php setHome(); ?>/paginas/css/menu.css" rel="stylesheet" type="text/css">
+	<link href="<?php setHome(); ?>/paginas/css/responsivo.css" rel="stylesheet" type="text/css">
 	<script src="<?php setHome(); ?>/paginas/js/jquery-1.7.min.js" type="text/javascript" /></script>
 	<!-- . . . . . . . . MENU . . . . . . . . .-->
 	<script async src="<?php setHome(); ?>/paginas/js/slicknav.js"></script>
@@ -30,7 +31,6 @@
 
 </head>
 <body>
-
 <div id="topo">
 	<div class="conteudo">
 		<a class="logo" href="<?php setHome(); ?>" title="Eletro Kassio">
@@ -41,8 +41,13 @@
 				<input type="text" name="busca" placeholder="O que você deseja encontrar?">
 				<input type="submit" value="" class="submit">
 			</form>
+			<div class="carrinho">
+				<p>Solicitar<br> Orçamento</p>
+				<a class="carinho" href="#"><p>20</p></a>
+			</div>
 		</div>
-		<div class="login-minhaobra"></div>
-		<?php setMenu(); ?>
+		<div class="login-minhaobra"><p>Olá, <a href="#">faça seu login!</a></p></div>
+		
+		<?php setMenu(); ?>	
 	</div>
 </div>

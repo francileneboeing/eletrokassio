@@ -7,6 +7,7 @@
 
 	//DEFINE BASE SITE
 	define(BASE, 'http://localhost/eletrokassio');
+	//define(BASE, 'http://eletrokassio.com.br/site');
 	define(TITULO, 'Eletro Kassio');
 	define(ADMIN, 'http://localhost/eletrokassio/admin');
 ?>
