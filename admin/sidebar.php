@@ -34,6 +34,13 @@
                             </li>                                                        
                         </ul>                        
                     </li>
+                    <li class="l-cadastro-cliente xn-openable">
+                        <a href="#"><span class="fa fa-image"></span> Cliente</a>
+                        <ul> 
+                            <li class="l-cadastro-cliente">                                                          
+                            <li><a href="<?php echo LISTAR; ?>/listaCliente.php"><span class="fa fa-list-ul"></span> Clientes</a></li>
+                        </ul>                       
+                    </li>
                 </li>
             </ul>
         </li>

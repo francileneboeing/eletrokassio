@@ -117,7 +117,6 @@ class ProdutoDAO {
         $sql = "DELETE FROM produto WHERE id = $id";
         $produto = $this->findByIDProduto($id);
         if ($conn->query($sql) === TRUE) {
-            unlink(FOTOS_PRODUTO . '/' . formatNumber($produto['id']) . '.' . $produto['extensao_foto']);
             echo "<script>window.location='" . LISTAR . "/listaProduto.php?return=sucess';</script>";
         } else {
             echo "<script>window.location='" . LISTAR . "/listaProduto.php?return=error';</script>";

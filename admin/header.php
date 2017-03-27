@@ -36,7 +36,7 @@
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery.mask.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery-ui.min.js"></script>
-<!--    <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/bootstrap/bootstrap.min.js"></script>        -->
+<!--   <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/bootstrap/bootstrap.min.js"></script>        -->
 
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/icheck/icheck.min.js'></script>        
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
@@ -49,6 +49,9 @@
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/themes/default.js'></script>
     
     <script type="text/javascript">
+        $('.cep').mask("00000-000",       {reverse: true, placeholder: "00000-000"});
+        $('.cpf').mask("000.000.000-00",       {reverse: true, placeholder: "000.000.000-00"});
+        $('.cnpj').mask("00.000.000/0000-00",  {reverse: true, placeholder: "00.000.000/0000-00"});
         $('.money').mask("#.##0,00",       {reverse: true, placeholder: "R$ 0,00"});
         $('.decimal-2').mask("#.##0,00",   {reverse: true, placeholder: "0,00"});
         $('.decimal-3').mask("#.##0,000",  {reverse: true, placeholder: "0,000"});

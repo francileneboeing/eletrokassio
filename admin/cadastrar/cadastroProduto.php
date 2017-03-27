@@ -225,7 +225,7 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">																									
                                             <input type="checkbox" name="ativo" class="icheckbox" value= "1" <?php echo $isChecked; ?>/>
-                                            <span class="help-block">Deixar marcado caso marca ativa</span>
+                                            <span class="help-block">Deixar marcado caso produto ativa</span>
                                         </div>
                                         
                                     </div>
