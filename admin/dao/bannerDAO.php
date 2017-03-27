@@ -2,7 +2,8 @@
 
 include('../restrito.php');
 include('../header.php');
-require_once('../utils/utils.php');
+include('../utils/utils.php');
+include('ADMIN'.'/utils/utils.php');
 
 $bannerDAO = new BannerDAO();
 if ($_POST['acao'] != null) {
@@ -150,6 +151,7 @@ class BannerDAO {
 
     function findAllBanner($isativo) {
         include('../connection/config.php');
+        include('ADMIN'.'/connection/config.php');
         $sql = null;
         if ($isativo){
             $sql = 'SELECT * FROM banner WHERE icativo = 1 ORDER BY id';
