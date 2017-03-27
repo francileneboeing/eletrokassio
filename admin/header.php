@@ -7,6 +7,8 @@
     define('CONNECTION',            'http://localhost/eletrokassio/admin/connection');
     define('FOTOS_MARCA',           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/marca');
     define('FOTOS_MARCA_ABSOLUTO', 'http://localhost/eletrokassio/admin/upload/marca');
+    define('FOTOS_BANNER',           $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/banner');
+    define('FOTOS_BANNER_ABSOLUTO', 'http://localhost/eletrokassio/admin/upload/banner');
     define('FOTOS_PRODUTO',         $_SERVER['DOCUMENT_ROOT'].'/eletrokassio/admin/upload/produto');
 ?>
 
@@ -22,6 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
+    
     <link rel="icon" href="<?php echo ADMIN; ?>/img/favicon.ico" type="image/x-icon" />
     <!-- END META SECTION -->
     
@@ -30,15 +33,11 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- EOF CSS INCLUDE -->       
 
-
-
-    <!-- PLUGINS  -->       
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery.mask.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/jquery/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/bootstrap/bootstrap.min.js"></script>        
-    <!-- END PLUGINS -->
+<!--    <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/bootstrap/bootstrap.min.js"></script>        -->
 
-    <!-- START THIS PAGE PLUGINS-->        
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/icheck/icheck.min.js'></script>        
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN; ?>/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
@@ -46,10 +45,14 @@
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/jquery.noty.js'></script>
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/layouts/topCenter.js'></script>
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/layouts/topLeft.js'></script>
-    <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/layouts/topRight.js'></script>             
-    
+    <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/layouts/topRight.js'></script>     
     <script type='text/javascript' src='<?php echo ADMIN; ?>/js/plugins/noty/themes/default.js'></script>
-    <script type="text/javascript">                                            
+    
+    <script type="text/javascript">
+        $('.money').mask("#.##0,00",       {reverse: true, placeholder: "R$ 0,00"});
+        $('.decimal-2').mask("#.##0,00",   {reverse: true, placeholder: "0,00"});
+        $('.decimal-3').mask("#.##0,000",  {reverse: true, placeholder: "0,000"});
+        $('.decimal-4').mask("#.##0,0000", {reverse: true, placeholder: "0,0000"});
         function notyConfirm(){
             noty({
                 text: 'Do you want to continue?',
@@ -66,7 +69,7 @@
                             }
                         }
                     ]
-            })                                                    
+            });                                                    
         }                                            
     </script>
 

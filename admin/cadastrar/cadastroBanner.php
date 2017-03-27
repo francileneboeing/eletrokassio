@@ -1,147 +1,201 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
+<?php include('../dao/bannerDAO.php'); ?>
+<?php require_once('../utils/utils.php'); ?>
+
+
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
-    
+
     <!-- START PAGE SIDEBAR -->
     <?php include('../sidebar.php'); ?>
     <script>
-    $(document).ready(function(){
-    $(".l_site").addClass("active");
-    $(".l_banner").addClass("active");
-    });
+        $(document).ready(function () {
+            $(".l-site").addClass("active");
+            $(".l-site-banner").addClass("active");
+        });
     </script>
-    
+
     <!-- PAGE CONTENT -->
     <div class="page-content">
-        
+
         <!-- START X-NAVIGATION VERTICAL -->
         <?php include('../nav_vertical.php'); ?>
         <!-- START BREADCRUMB -->
-        <ul class="breadcrumb">
+        <ul class="breadcrumb"
             <li>Inicio</li>
+            <li>Site</li>
             <li>Banner</li>
+            <li>Adicionar</li>
             <li class="active">Cadastro de Banner</li>
         </ul>
-        <!-- END BREADCRUMB -->
-        
+        <!-- END BREADCRUMB -->		
+        <?php
+        $bannerDAO = new BannerDAO();
+        $id        = null;
+        $titulo    = null;
+        $subTitulo = null;
+        $nomeBotao = null;
+        $urlBotao  = null;
+        $icativo   = 1;
+        $isChecked = "checked";
+
+        if (!empty($_GET['id'])) {
+            $id = $_GET['id'];
+            if ($id > 0) {                
+                $row = $bannerDAO->findByIDBanner($id);
+                if ($row != null) {
+                    $id            = formatNumber($row['id']);
+                    $titulo        = $row['titulo']; 
+                    $subTitulo     = $row['subtitulo'];
+                    $nomeBotao     = $row['descricao_botao'];
+                    $urlBotao      = $row['url_destino'];                    
+                    $icativo       = $row['icativo'];
+                    $caminhoImagem = FOTOS_BANNER_ABSOLUTO . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto'];
+                    $caminhoImagemAux = FOTOS_BANNER . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto'];
+                    if (!file_exists($caminhoImagemAux)){
+                        $hiddenDiv = "hidden";
+                    }
+                    if ($icativo != 1) {
+                        $isChecked = "";
+                    }
+                }
+            }
+        } else {
+            $id = $bannerDAO->findMaxIDBanner();
+            $hiddenDiv = "hidden";
+            $requiredImage = "required";
+        }
+        ?>
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
             <div class="row">
                 <div class="col-md-12">
                     <script type="text/javascript">
-                    function notySuccess()){
-                    $(document).ready(function() {noty({text: 'Successful action', layout: 'topRight', type: 'success'})});
-                    }
-                    
+                        function notySuccess()) {
+                            $(document).ready(function () {
+                                noty({text: 'Successful action', layout: 'topRight', type: 'success'})
+                            });
+                        }
+
                     </script>
                     <!-- COMEÇA FORMULÁRIO -->
-                    <form class="form-horizontal" action="<?php echo ADMIN; ?>/bd/insertsFunctions.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="acao" value="cadastraBanner">
+                    <form class="form-horizontal" action="<?php echo DAO; ?>/bannerDAO.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="acao" value="cadastroBanner">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Cadastro</strong> banner</h3>
+                                <h3 class="panel-title"><strong>Cadastro</strong> de Banner</h3>
                             </div>
                             <!-- ALERT! -->
                             <?php
-                            if (!empty($_GET ['return']) && $_GET ['return'] == "sucess") { ?>
-                            <div class="alert alert-success" role="alert">
-                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <strong style="margin-right: 5px;">Yeah! </strong>  Banner adicionado com sucesso.
-                            </div>
-                            <?php } ?>
-                            <?php if (!empty($_GET ['return']) && $_GET ['return'] == "imageNull") { ?>
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <strong style="margin-right:5px;">OPS! </strong>  É essencial que você selecione uma imagem para este banner.
-                            </div>
-                            <?php } ?>
-                            <?php if (!empty($_GET ['return']) && $_GET ['return'] == "imageBig") { ?>
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <strong style="margin-right:5px;">OPS! </strong>  Sua imagem ultrapassou 1mb, que tal salvá-la em um tamanho menor?
-                            </div>
-                            <?php } ?>
+                            if (!empty($_GET['return']) && $_GET['return'] == "sucess") {
+                                echo '<div class="alert alert-success" role="alert">';
+                                echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+                                echo '<strong style="margin-right: 5px;"> </strong>Yeah! Banner adicionada com sucesso.';
+                                echo '</div>';
+                            } else if (!empty($_GET['return']) && $_GET['return'] == "error") {
+                                echo '<div class="alert alert-danger" role="alert">';
+                                echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+                                echo '<strong style="margin-right: 5px;"> </strong>:( Algo aconteceu de errado. Contate o admistrador do sistema!';
+                                echo '</div>';
+                            }
+                            ?>					
                             <div class="panel-body">
-                                <p>Preencha os campos abaixo para adicionar um novo banner.</p>
+                                <p>Preencha os campos abaixo para adicionar um novo Banner.</p>
                             </div>
                             <div class="panel-body">
-                                
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-12 control-label">Código</label>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                            <input name="id" type="text" class="form-control" required="required" readonly value="<?php echo $id; ?>">
+                                        </div>										
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Título<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input name="titulo" type="text" class="form-control" required>
+                                            <input name="titulo" type="text" class="form-control" required="required" value ="<?php echo $titulo ?>">
                                         </div>
-                                        <span class="help-block">Insira o título do banner.</span>
+                                        <span class="help-block">Insira um título para o Banner</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-xs-12 control-label">Subtitulo<span class="red"> *</span></label>
+                                    <label class="col-md-3 col-xs-12 control-label">SubTítulo<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input name="descricao" type="text" class="form-control" required>
+                                            <input name="subtitulo" type="text" class="form-control" required="required" value ="<?php echo $subTitulo ?>">
                                         </div>
-                                        <span class="help-block">Insira o subtitulo do banner.</span>
+                                        <span class="help-block">Insira um Subtítulo para o Banner</span>
                                     </div>
-                                </div>
+                                </div>   
                                 <div class="form-group">
-                                    <label class="col-md-3 col-xs-12 control-label">Nome do botão</label>
+                                    <label class="col-md-3 col-xs-12 control-label">Nome do Botão<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input name="botao" type="text" class="form-control">
+                                            <input name="nomebotao" type="text" class="form-control" required="required" value ="<?php echo $nomeBotao ?>">
                                         </div>
                                         <span class="help-block">Insira um nome ao botão do banner. Ex.: Saiba mais.</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-xs-12 control-label">Link do botão</label>
+                                    <label class="col-md-3 col-xs-12 control-label">Link do Botão<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input name="link" type="text" class="form-control">
+                                            <input name="urlbotao" type="text" class="form-control" required="required" value ="<?php echo $urlBotao ?>">
                                         </div>
-                                        <span class="help-block">Insira uma url para onde o botão irá redimensionar. Ex.: http://eletrokassio.com.br/contato.</span>
+                                        <span class="help-block">Insira uma url para onde o botão irá redirecionar. Ex.: http://eletrokassio.com.br/contato.</span>
                                     </div>
-                                </div>
+                                </div>                                 
+                                <div class="form-group" <?php echo $hiddenDiv; ?>>
+                                    <label class="col-md-3 col-xs-12 control-label">Imagem Atual</label>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div>                                            
+                                            <img name="img" width="400" height="200" src="<?php echo $caminhoImagem; ?>">
+                                        </div>                                        
+                                    </div>
+                                </div>                                
                                 <div class="form-group">
                                     <label class="col-md-3 col-xs-12 control-label">Imagem<span class="red"> *</span></label>
-                                    <div class="col-md-6 col-xs-12">
-                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" required>
-                                        <span class="help-block">Selecione a imagem do banner. <strong style="color:red;">O tamanho máximo recomendado é de 500kb.</strong> Tamanho ideal: <strong>1920x430</strong></span>
+                                    <div class="col-md-6 col-xs-12">                                                                                                                              
+                                        <input type="file" class="file btn-primary" name="img" id="file-simple" title="Procurar" value="<?php echo $caminhoImagem . ' ' . $requiredImage ?>" >                                        
+                                        <span class="help-block">Selecione a imagem de logo da marca. <strong style="color:red;">O tamanho máximo recomendado é de 500kb.</strong> Tamanho ideal: <strong>1920x400</strong></span>
                                     </div>
-                                </div>
-                                <!--<div class="form-group">
-                                    <label class="col-md-3 col-xs-12 control-label">Tags</label>
+                                </div>	
+                                <div class="form-group">
+                                    <label class="col-md-3 col-xs-12 control-label">Ativo<span class="red"> *</span></label>
                                     <div class="col-md-6 col-xs-12">
-                                        <input type="text" class="tagsinput" value="Notícia"/>
+                                        <div class="input-group">																									
+                                            <input type="checkbox" name="ativo" class="icheckbox" value= "1" <?php echo $isChecked; ?>/>
+                                        </div>
+                                        <span class="help-block">Deixar marcado caso marca ativa</span>
                                     </div>
-                                </div> -->
+                                </div>								
                                 <br>
                             </div>
                             <div class="panel-footer">
-                                <a href="../listaBanner.php" class="btn btn-big btn-primary pull-left"><span class="fa fa-th-list"></span> Listar Banners</a>
-                                <!-- <button class="btn btn-big btn-default">Limpar</button>     -->
-                                <button class="btn btn-big btn-primary pull-right">Cadastrar</button>
+                                <a href="<?php echo LISTAR ?>/listaBanner.php" class="btn btn-big btn-primary pull-left"><span class="fa fa-th-list"></span> Listar Banner</a>								
+                                <button class="btn btn-big btn-primary pull-right">Salvar</button>
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
-            
-            <!-- START DASHBOARD CHART -->
             <div class="chart-holder" id="dashboard-area-1" style="height: 200px;"></div>
             <div class="block-full-width"></div>
             <!-- END DASHBOARD CHART -->
-            
+
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
 </div>
 <!-- END PAGE CONTAINER -->
-<?php include(ADMIN.'/footer.php'); ?>
+<?php include('../footer.php'); ?>

@@ -17,8 +17,7 @@
   clear: both;
 }
 .background-colorful {
-  background: linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%);
-  background: -o-linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%);
+  background: linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%); 
   background: -moz-linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%);
   background: -webkit-linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%);
   background: -ms-linear-gradient(left, #E04B4A 0%, #327ef0 50%, #95b75d 100%);

@@ -72,8 +72,8 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    include('../utils/utils.php');
-                                    $result = findAllMarca();
+                                    $marcaDAO = new MarcaDAO();
+                                    $result  = $marcaDAO->findAllMarca();
                                     if ($result->num_rows > 0) {
                                         while ($marca = $result->fetch_assoc()) {
                                             $id = $marca['id'];

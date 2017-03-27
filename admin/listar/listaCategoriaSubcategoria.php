@@ -75,8 +75,8 @@
                                 <tbody>
                                     <?php
                                     //include('../limitaTexto.php');
-                                    include('../utils/utils.php');
-                                    $result = findAllCategoria();
+                                    $categoriaProdutoDAO = new CategoriaProdutoDAO();
+                                    $result = $categoriaProdutoDAO->findAllCategoria();
                                     if ($result->num_rows > 0) {
                                         while ($categoria = $result->fetch_assoc()) {
                                             $id = $categoria['id'];
@@ -86,7 +86,7 @@
                                             $descricaoCategPai = null;
                                             $descriaoStatus = null;
                                             if ($idPai > 0) {
-                                                $categoria = findByIDCategoria($idPai);
+                                                $categoria = $categoriaProdutoDAO->findByIDCategoria($idPai);
                                                 $descricaoCategPai = $categoria['descricao'];
                                             }
                                             if ($icAtivo == 1) {

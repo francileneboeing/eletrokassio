@@ -7,7 +7,6 @@ class UploadImagem {
     private   $name;
     private   $directory;
     private   $extension;
-    private   $absolutePath;
     protected $tipos = array("jpeg", "png", "gif", "jpg"); // Nossos tipos de imagem disponíveis para este exemplo
 
 // Função que irá redimensionar nossa imagem
@@ -19,14 +18,17 @@ class UploadImagem {
 
 // Pegamos a largura e altura originais, além do tipo de imagem
         list($width_orig, $height_orig, $tipo, $atributo) = getimagesize($caminho . $nomearquivo);
+        echo $caminho . $nomearquivo;
 
 // Se largura é maior que altura, dividimos a largura determinada pela original e multiplicamos a altura pelo resultado, para manter a proporção da imagem
-        if ($width_orig > $height_orig) {
-            $height = ($width / $width_orig) * $height_orig;
-// Se altura é maior que largura, dividimos a altura determinada pela original e multiplicamos a largura pelo resultado, para manter a proporção da imagem
-        } elseif ($width_orig < $height_orig) {
-            $width = ($height / $height_orig) * $width_orig;
-        } // -> fim if
+//        if ($width_orig > $height_orig) {
+//            //$height = ($width / $width_orig) * $height_orig;
+//            $height = ($width / $width_orig) * $height_orig;
+//// Se altura é maior que largura, dividimos a altura determinada pela original e multiplicamos a largura pelo resultado, para manter a proporção da imagem
+//        } elseif ($width_orig < $height_orig) {
+//            $width = ($height / $height_orig) * $width_orig;
+//        } // -> fim if
+        echo $width. '. altura: '.$height;
 // Criando a imagem com o novo tamanho
         $novaimagem = imagecreatetruecolor($width, $height);
         switch ($tipo) {
@@ -125,7 +127,7 @@ class UploadImagem {
         }else {
             list($width_orig, $height_orig) = getimagesize($uploadfile);
             if ($width_orig > $this->width || $height_orig > $this->height) {
-                $this->redimensionar($caminho, $file['name']);
+                //$this->redimensionar($caminho, $file['name']);
             }
             $mensagem = "<a href='" . $uploadfile . "'><font color='#070'>Upload realizado com sucesso!</font><a>";
         } 

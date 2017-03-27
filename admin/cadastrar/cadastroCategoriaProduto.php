@@ -30,7 +30,7 @@
         </ul>
         <!-- END BREADCRUMB -->		
         <?php
-        include('../utils/utils.php');
+        $categoriaProdutoDAO = new CategoriaProdutoDAO();
         $id = null;
         $descricao = null;
         $icativo = 1;
@@ -39,7 +39,7 @@
         if (!empty($_GET['id'])) {
             $id = $_GET['id'];
             if ($id > 0) {
-                $row = findByIDCategoria($id);
+                $row = $categoriaProdutoDAO->findByIDCategoria($id);
                 if ($row != null) {
                     $id = formatNumber($row['id']);
                     $descricao = $row['descricao'];
@@ -51,7 +51,7 @@
                 }
             }
         } else {
-            $id = findMaxIDCategoria();
+            $id = $categoriaProdutoDAO->findMaxIDCategoria();
         }
         ?>
         <!-- PAGE CONTENT WRAPPER -->
@@ -115,10 +115,10 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <select name="categoriaPai" class="form-control">
+                                            <select name="categoriaPai" class="form-control select" data-live-search="true">
                                                 <option value="null">Nenhum</option>
                                                 <?php
-                                                $result = findAllOnlyCategoria();
+                                                $result = $categoriaProdutoDAO->findAllOnlyCategoria();
                                                 if ($result->num_rows > 0) {
                                                     while ($categoria = $result->fetch_assoc()) {
                                                         if ($idPai == $categoria['id']) {

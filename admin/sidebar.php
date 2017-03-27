@@ -1,5 +1,5 @@
 <!-- START PAGE SIDEBAR -->
-<div class="page-sidebar"">
+<div class="page-sidebar">
     <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
@@ -37,16 +37,14 @@
                 </li>
             </ul>
         </li>
-        <li class="l_site xn-openable">
+        <li class="l-site xn-openable">
             <a href="#"><span class="fa fa-certificate"></span> <span class="xn-text">Site</span></a>
-            <ul>
-                
-                <li class="l_site">
-                    <li class="l_banner xn-openable">
+            <ul>                
+                <li class="l-site-banner">
+                    <li class="l-site-banner xn-openable">
                         <a href="#"><span class="fa fa-image"></span> Banner</a>
-                        <ul>
-                            <li><a href="cadastros/cadastroBanner.php"><span class="fa fa-plus"></span> Adicionar</a></li>
-                            <li><a href="<?php echo ADMIN; ?>/listaBanner.php"><span class="fa fa-list-ul"></span> Listar</a></li>
+                        <ul>                            
+                            <li><a href="<?php echo LISTAR; ?>/listaBanner.php"><span class="fa fa-list-ul"></span> Listar</a></li>
                         </ul>
                     </li>
                 </li>

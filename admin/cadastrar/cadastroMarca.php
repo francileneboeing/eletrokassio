@@ -1,6 +1,8 @@
 <?php include('../header.php'); ?>
 <?php include('../restrito.php'); ?>
 <?php include('../dao/marcaDAO.php'); ?>
+<?php require_once('../utils/utils.php'); ?>
+
 
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
@@ -31,7 +33,7 @@
         </ul>
         <!-- END BREADCRUMB -->		
         <?php
-        include('../utils/utils.php');
+        $marcaDAO = new MarcaDAO();
         $id = null;
         $descricao = null;
         $icativo = 1;
@@ -39,21 +41,24 @@
 
         if (!empty($_GET['id'])) {
             $id = $_GET['id'];
-            if ($id > 0) {
-                $row = findByIDMarca($id);
+            if ($id > 0) {                
+                $row = $marcaDAO->findByIDMarca($id);
                 if ($row != null) {
                     $id = formatNumber($row['id']);
                     $descricao = $row['descricao'];
                     $icativo = $row['icativo'];
-                    $caminhoImagem = FOTOS_MARCA_ABSOLUTO . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto'];
-
+                    $caminhoImagem    = FOTOS_MARCA_ABSOLUTO . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto']; //PARA MOSTRAR NA TELA.
+                    $caminhoImagemAux = FOTOS_MARCA . '/' . $row['descricao_foto'] . '.' . $row['extensao_foto']; //PARA VERIFICAR EXISTENCIA DA IMAGEM
+                    if (!file_exists($caminhoImagemAux)){
+                        $hiddenDiv = "hidden";
+                    }
                     if ($icativo != 1) {
                         $isChecked = "";
                     }
                 }
             }
         } else {
-            $id = findMaxIDMarca();
+            $id = $marcaDAO->findMaxIDMarca();
             $hiddenDiv = "hidden";
             $requiredImage = "required";
         }
