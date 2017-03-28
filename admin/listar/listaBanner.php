@@ -100,7 +100,7 @@
                                             if ($icAtivo == 1) {
                                                 echo "<a href=\"" . DAO . "/bannerDAO.php?acao=alteraStatusBanner&id=" . $id . "&status=0\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #5ba;\"></p></a>";
                                             } else {
-                                                echo "<a href=\"" . DAO . "/marcaDAO.php?acao=alteraStatusBanner&id=" . $id . "&status=1\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #f00;\"></p></a>";
+                                                echo "<a href=\"" . DAO . "/bannerDAO.php?acao=alteraStatusBanner&id=" . $id . "&status=1\"><p style=\"margin: 0 auto; width: 17px; height: 17px; border-radius:20px; background: #f00;\"></p></a>";
                                             }
                                             echo "</td>";
                                             echo "<td style=\"text-align:right;\">

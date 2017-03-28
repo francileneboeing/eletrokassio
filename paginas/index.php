@@ -26,18 +26,16 @@
 
 	<?php 
 		$bannerDAO = new BannerDAO();
-		$result  = $bannerDAO->findAllBanner();
+		$result  = $bannerDAO->findAllBanner('1');
 		if ($result->num_rows > 0) {
 			while ($banner = $result->fetch_assoc()) {
 				$id        = $banner['id'];
 				$titulo    = $banner['titulo'];
 				$subtitulo = $banner['subtitulo'];
-				$foto = $banner['descricao_foto'];
+				$foto	   = $banner['descricao_foto'];
 				$extensao  = $banner['extensao_foto'];
 				$nomeBotao = $banner['descricao_botao'];
 				$urlBotao  = $banner['url_destino'];
-				$icAtivo   = $banner['icativo'];
-				$descriaoStatus = null;
 	?>
 		<li class="li-slide" style="background-image: url('<?php echo ADMIN.'/upload/banner/'.$foto.'.'.$extensao; ?>');">
 				<div class="conteudo">
