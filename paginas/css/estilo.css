@@ -402,6 +402,7 @@ section h1 {
 	display: inline-block;
 	border: 1px solid #ff9333;
 	min-width: 340px;
+	float: left;
 }
 .blog blockquote img {
 	width: 100%;

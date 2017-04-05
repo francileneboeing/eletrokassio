@@ -16,7 +16,8 @@
 	footer div.container.ma,
 	footer div.container.me {
 		width: 50%;
-		height: 360px;
+		height: auto;
+   		margin-bottom: 30px;
 	}
 	footer div.container.me {
 		padding-top: 20px;
@@ -52,6 +53,7 @@
 	.top-topo {
 		width: 100%;
 		margin-top: -100px;
+		float: left;
 	}
 	#topo {
 		margin-bottom: -100px;
@@ -100,19 +102,44 @@
 		background-position: 30px 40px;
 	}
 	.top-topo {
-		height: auto;
 		margin-top: -50px;
+		float: left;
 	}
 	.top-topo {
 		width: 100%;
+		border: none;
+		position: relative;
 		margin-top: -100px;
 	}
 	#topo {
 		margin-bottom: -50px;
 	}
 	.carrinho {
+		width: 34%;
+		margin: 10px 0 0 0;
+		float: right;
+	}
+	.login-minhaobra {
+		background-size: 40%;
 		width: 100%;
-		margin: 20px 0 0 50px;
+		float: left;
+		position: relative;
+		height: 150px;
+	}
+	.login-minhaobra {
+		background-position: 15% 25px;
+		background-size: auto 70%;
+		padding-left: 50%;
+		background-image: url('../images/logo-minha-obra-mobile.png');
+	}
+	.login-minhaobra p {
+		top: 25px;
+		float: left;
+		width: 180px;
+		font-size: 25px;
+		background-position: left 10px;
+		text-align: left;
+		padding-top: 35px;
 	}
 }
 @media only screen and (max-width: 700px) {
@@ -139,12 +166,12 @@
 	.minhaobra.top {
 		background-size: auto 40%;
 	}
-	.login-minhaobra {
-		width: 180px;
-		background-size: 40%;
-	}
+
 	.carrinho, .top-topo form {
 		margin-left: 20px;
+	}
+	.top-topo form {
+		width: 50%;
 	}
 	#topo a.logo {
 		margin-left: 0;
@@ -159,26 +186,28 @@
 	}
 }
 @media only screen and (max-width: 500px) {
-	.minhaobra.top .conteudo p {
-		width: 60%;
-		margin-bottom: 300px;
-	}
-	.minhaobra.top {
-		background-size: auto 30%;
-	}
 	.login-minhaobra {
-		width: 150px;
-		background-size: 50%;
-		background-position: 40px 40px;
+		background-position: 10% 25px;
+		background-size: auto 60%;
+		padding-left: 40%;
+		height: 100px;
 	}
 	.login-minhaobra p {
-		background-position: center top;
-		padding-top: 30px;
-		top: 210px;
-		margin: 0 0 0 5px;
+		top: 20px;
+		font-size: 16px;
+	}
+	.top-topo {
+		margin-bottom: 20px;
+		height: 120px;
+		width: 95%;
 	}
 	.top-topo form {
-		width: 55%;
+		width: 80%;
+	}
+	.top-topo .carrinho {
+		width: 80%;
+		float: left;
+		margin-top: 20px;
 	}
 }
 @media only screen and (max-width: 400px) {
