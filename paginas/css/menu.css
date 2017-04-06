@@ -41,7 +41,7 @@
 #menu ul li a {
 	text-decoration:none;
 	color: #338033;
-	margin: 0 20px;
+	margin: 0 30px;
 	font-weight: 500;
 }
 #menu ul li a:hover {
@@ -68,7 +68,7 @@
 	z-index: 6;
 }
 #header.scroll-background {
-	background-color: #80ff80;
+	background-color: #4db94d;
 	top: 0;
 	height: 60px;
 }
@@ -167,12 +167,13 @@ a.logo-top-menu {
 }
 nav#top-menu ul li a {
 	text-decoration:none;
-	color: #338033;
+	/*color: #338033;*/
+	color: #fff;
 	margin: 0 20px;
 	font-weight: 500;
 }
 nav#top-menu ul li a:hover {
-	color: #ff9333;
+	color: #ffea7a;
 }
 nav#top-menu ul li:hover {
 	cursor: pointer;

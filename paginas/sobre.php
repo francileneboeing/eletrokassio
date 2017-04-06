@@ -5,8 +5,13 @@
 
 <!-- HOME -->
 <?php getHome(); ?>
+<hgroup>
+	<div class="conteudo">
+		<h1>A Eletro Kássio</h1>
+	</div>
+</hgroup>
 <br><br><br><br><br><br><br><br><br>
-<h1>PÁGINA: INSTITUCIONAL</h1>
+<br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br>
 <!-- RODAPÉ -->
 <?php setFooter(); ?>

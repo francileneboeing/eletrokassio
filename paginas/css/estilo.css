@@ -70,6 +70,30 @@ section h1 {
 	background-position: center left;
 	padding: 20px 0 20px 70px;
 }
+section h1.int {
+	background-image: none;
+	padding: 20px 0 20px 0;
+}
+hgroup {
+	background-color: #4db94d;
+	width: 100%;
+	min-height: 100px;
+	float: left;
+	border-bottom: 5px solid transparent;
+    -moz-border-image: -moz-linear-gradient(left, #fcc802 0%, #fdc801 100%);
+    -webkit-border-image: -webkit-linear-gradient(right, #a0ff9f 0%, #fcc802 100%);
+    border-image-slice: 1;
+}
+hgroup h1 {
+	font-weight: 500;
+	float: left;
+	padding: 45px 0 45px 80px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 27px;
+	background-image: url("../images/relampago-titulo.png");
+	background-position: left center;
+}
 /* HEADER */
 #topo {
 	height: 100%;
@@ -497,11 +521,107 @@ section h1 {
 .mapa {
 	margin-top: 50px;
 }
+/* #############      contato     ############# */
+.contato blockquote.dir, 
+.contato blockquote.esq {
+	width: 49%;
+	display: inline-block;
+	padding: 70px 10px 40px 0;
+}
+.contato blockquote.dir {
+	margin-left: 15px;
+}
+.contato blockquote.dir p, 
+.contato blockquote.esq p {
+	float: left;
+	width: 97%;
+	text-align: left;
+	font-size: 14px;
+	color: #666;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+.contato blockquote .mail, 
+.contato blockquote .fone, 
+.contato blockquote .local {
+	background-image: url("../images/icon-local-l.png");
+	height: 80px;
+	padding: 10px 0 0 80px;
+	float: left;
+	display:  inline-block;
+	width: 100%;
+}
+.contato blockquote .mail {
+	background-image: url("../images/icon-mail.png");
+}
+.contato blockquote .fone {
+	background-image: url("../images/icon-fone.png");
+}
+.contato blockquote .mail p, 
+.contato blockquote .fone p, 
+.contato blockquote .local p {
+	font-size: 14px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    color: #3c7025;
+    font-weight: 400;
+}
+.contato blockquote .fone p {
+	font-size: 30px;
+    font-weight: 100;
+}
+.contato blockquote form {
+	float: left;
+	width: 100%;
+}
+.contato blockquote form input,
+.contato blockquote form textarea {
+	width: 99%;
+	float: left;
+	margin: 5px 0;
+	padding: 10px 2%;
+	border: 2px solid #fdc801;
+}
+.contato blockquote form input:hover,
+.contato blockquote form textarea:hover,
+.contato blockquote form input:focus,
+.contato blockquote form textarea:focus {
+	border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(left, #fcc802 0%, #fdc801 100%);
+    -webkit-border-image: -webkit-linear-gradient(right, #a0ff9f 0%, #fcc802 100%);
+    border-image-slice: 1;
+    outline: 0 none;
+}
+.contato blockquote form textarea {
+	height: 170px;
+}
+.contato blockquote form input.t50 {
+	width: 48.5%;
+}
+.contato blockquote form input.t50.d {
+	margin-left: 2%;
+}
+.contato blockquote form input.submit {
+	border: 0;
+	background-color: #fdc801;
+	color: white;
+	max-width: 100px;
+	border-radius: 3px;
+	font-size: 16px;
+	float: right;
+	margin-top: -55px;
+	margin-right: 15px;
+}
+.contato blockquote form input.submit:hover {
+	background-color: #ff9333;
+	cursor: pointer;
+}
 /* #############      footer      ############# */
 footer {
 	background-color: #4db94d;
 	height: auto;
-	border-top: 10px solid transparent;
+	border-top: 5px solid transparent;
     -moz-border-image: -moz-linear-gradient(left, #fcc802 0%, #fdc801 100%);
     -webkit-border-image: -webkit-linear-gradient(right, #a0ff9f 0%, #fcc802 100%);
     border-image-slice: 1;

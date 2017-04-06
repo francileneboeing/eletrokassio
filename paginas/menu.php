@@ -5,7 +5,7 @@
       <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
       <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
       <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
-      <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>
+      <!-- <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li> -->
       <li><a href="<?php setHome(); ?>/contato">Contato</a></li>
     </lis>
   </ul>
@@ -26,7 +26,7 @@
           <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
           <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
           <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
-          <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>
+          <!-- <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li> -->
           <li><a href="<?php setHome(); ?>/contato">Contato</a></li>
         </ul>
       </li>
@@ -37,13 +37,13 @@
 </div>
 <nav id="top-menu" class="menu-elite-container">
   <ul id="primary-menu" class="menu">
-    <a class="logo-top-menu" href="<?php setHome(); ?>"><img src="<?php setHome(); ?>/paginas/images/logo.png"></a>
+    <a class="logo-top-menu" href="<?php setHome(); ?>"><img src="<?php setHome(); ?>/paginas/images/logo-b.png"></a>
     <lis>
       <li><a href="<?php setHome(); ?>">Início</a></li>
       <li><a href="<?php setHome(); ?>/sobre">Instucional</a></li>
       <li><a href="<?php setHome(); ?>/produtos">Produtos</a></li>
       <li><a href="<?php setHome(); ?>/blog">Blog</a></li>
-      <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li>
+      <!-- <li><a href="<?php setHome(); ?>/marcas">Marcas</a></li> -->
       <li><a href="<?php setHome(); ?>/contato">Contato</a></li>
     </lis>
   </ul>
