@@ -113,10 +113,12 @@
                                             }
                                             echo "</td>";
                                             echo "<td style=\"text-align:right;\">
-                                                <a class=\"btn btn-warning\" href= \"" . CADASTRAR . "/cadastroProduto.php?id=" . $id . "\">
+                                                      <a class=\"btn btn-warning\" href= \"" . CADASTRAR . "/cadastroProduto.php?id=" . $id . "\">
                                                       <span class=\"fa fa-edit\"></span> Editar</a>
                                                       <button type=\"button\" class=\"btn btn-danger mb-control\" onclick=\"ConfirmDeletar(" . $id . ");\" data-box=\"#message-box\">
                                                       <span class=\"fa fa-trash-o\"></span> Deletar</button>
+                                                      <a class=\"btn btn-primary\" href= \"" .LISTAR. "/listaFotoProduto.php?id=" . $id . "\">
+                                                      <span class=\"fa fa-image\"></span> Ver Fotos</a>
                                                       </td>";
                                             echo "</tr>";
                                         }
